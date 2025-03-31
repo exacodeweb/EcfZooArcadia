@@ -1,0 +1,210 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+#avis {
+  padding: 20px;
+  background-color: #fff;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.avis-scroll-container {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 20px;
+}
+
+.avis-container {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.3s ease;
+}
+
+.avis {
+  min-width: 300px;
+  padding: 20px;
+  background: #eaeaea;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#form-avis {
+  max-width: 800px;/*800px*/
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.avis-form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.avis-form input, .avis-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.avis-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+
+
+.carousel-container {
+  position: relative;
+  max-width: 800px;
+  margin: 20px auto;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+  display: flex;
+  gap: 20px;
+  animation: carouselScroll 20s linear infinite;
+}
+
+.carousel-item {
+  min-width: 300px;
+  flex-shrink: 0;
+  background-color: #eaeaea;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.carousel-item p {
+  font-style: italic;
+  color: #555;
+}
+
+.carousel-item cite {
+  display: block;
+  margin-top: 10px;
+  text-align: right;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Défilement Infini */
+@keyframes carouselScroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(calc(-300px * 5)); /* Ajustez selon le nombre d'éléments visibles  * 5 */
+  }
+}
+
+
+
+
+
+/*
+.carousel {
+  display: flex;
+  gap: 20px;
+  animation: scrollCarousel linear infinite;
+  will-change: transform;
+}
+
+.carousel-item {
+  min-width: 300px;
+  flex-shrink: 0;
+  background-color: #eaeaea;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes scrollCarousel {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}*/
+
+
+#avis {
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  position: relative;
+  overflow: hidden;
+  max-width: 800px; /* Définir une largeur maximale pour centrer */
+  margin: 0 auto; /* Centrer horizontalement */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.carousel {
+  display: flex;
+  gap: 20px; /* Espacement entre les avis */
+  animation: defilement 15s linear infinite;
+  width: max-content; /* Ajuster la largeur au contenu réel */
+}
+
+.carousel-item {
+  min-width: 300px; /* Taille minimale pour chaque avis */
+  flex-shrink: 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+
+
+
+  .stars {
+    font-size: 1.5rem;
+    color: gold;
+    letter-spacing: 0.1rem;
+  }
+
+
+/* Défilement Infini */
+@keyframes defilement {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+/*div .avis .p {
+  width: 700px;
+  height: auto;
+}*/
+

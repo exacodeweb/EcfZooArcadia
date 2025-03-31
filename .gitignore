@@ -1,0 +1,4 @@
+# .gitignore
+
+# Ignorer le dossier Fichier_de_Test
+Fichier_de_Test/

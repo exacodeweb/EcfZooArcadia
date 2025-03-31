@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services du Zoo-Arcadia</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <div class="service-container">
+        <h1>Services du Zoo-Arcadia</h1>
+
+        <!-- Liste des services -->
+        <h2>Liste des services disponibles</h2>
+        <ul id="services-list">
+            <!-- Les services seront chargés dynamiquement ici -->
+        </ul>
+
+        <!-- Formulaire pour ajouter un service -->
+        <h2>Ajouter un service</h2>
+        <form id="add-service-form">
+            <label for="service-name">Nom du service</label><br>
+            <input type="text" id="service-name" name="nom" required><br><br>
+
+            <label for="service-description">Description du service</label><br>
+            <textarea id="service-description" name="description" rows="4" required></textarea><br><br>
+
+            <button type="submit">Ajouter</button>
+        </form>
+    </div>
+    <script src="../assets/js/scripts.js"></script>
+</body>
+</html>

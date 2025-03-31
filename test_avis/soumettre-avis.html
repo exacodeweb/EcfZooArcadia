@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soumettre un Avis</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Style de base pour le corps */
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Section du formulaire */
+    #form-avis {
+      max-width: 500px;
+      width: 90%;
+      /* Pour s'adapter aux écrans étroits */
+      margin: 20px;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #form-avis h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #444;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Style du formulaire */
+    .avis-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .avis-form label {
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .avis-form input,
+    .avis-form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      background-color: #f7f7f7;
+      transition: border-color 0.3s ease-in-out;
+      box-sizing: border-box;
+    }
+
+    .avis-form input:focus,
+    .avis-form textarea:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    /* Bouton */
+    .btn {
+      background-color: #007bff;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .mt-3 {
+      margin-top: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      #form-avis {
+        padding: 15px;
+      }
+
+      .btn {
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section id="form-avis">
+    <h2>Laisser un Avis</h2>
+    <form action="./soumettre-avis.php" method="POST" class="avis-form" novalidate>
+      <!-- Champ Auteur -->
+      <div>
+        <label for="auteur">Votre Nom :</label>
+        <input type="text" id="auteur" name="auteur" placeholder="Entrez votre nom" required aria-required="true">
+      </div>
+      <!-- Champ Message -->
+      <div>
+        <label for="message">Votre Avis :</label>
+        <textarea id="message" name="message" rows="4" placeholder="Écrivez votre avis ici" required
+          aria-required="true"></textarea>
+      </div>
+      <!-- Bouton Envoyer -->
+      <button type="submit" class="btn mt-3">Envoyer</button>
+    </form>
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,357 @@
+/* Style général */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Header et Menu */
+header {
+  background-color: #2b2b2b;/**//*#4CAF50*/
+}
+
+.navbar {
+  padding: 1rem;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover  {
+  color: #f2a007;
+}
+
+/* Logo dans l'en-tête */
+.img-logo-1 img {
+  max-width: 100px;
+  width: 100%;
+}
+
+/*----------------------------------------------------*/
+.nav-admin-link {
+  color: white;
+  transition: color 0.3s ease; /* Transition douce pour l'effet de survol */
+}
+
+/* Cible le SVG à l'intérieur du lien */
+.nav-admin-link svg {
+  /*fill: currentColor; /* Applique la couleur actuelle du lien au SVG */
+  color: white;
+}
+
+.nav-admin-link svg :hover {
+  color: #f2a007;/*orange*/
+}
+/*---------------------------------------------------*/
+
+/* Présentation */
+#presentation h1 {
+  font-size: 2.5rem;
+  color: #2b2b2b;
+  margin-bottom: 1rem;
+}
+
+#presentation p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.images-presentation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.images-presentation img {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Habitats, Services, Animaux */
+section {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+section ul li {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+
+/*-------------------------------------------------*/
+/*#habitats   {/*, #services *//*
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}*/
+
+#habitats ul {
+  text-align: left;/*center*/
+}
+
+.block {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-unstyled {
+  text-align: left;
+}
+
+/*----------------------------------*/
+.list-unstyled-footer {
+  text-align: left;
+}
+/*----------------------------------*/
+
+.navbar-toggler-icon {
+  color: white;
+}
+/*------------------------------------------------*/
+
+.navbar-toggler {
+  border: none; /* Retire la bordure par défaut */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* Icône en blanc */
+  transition: background-color 0.3s ease;
+}
+
+.navbar-toggler:hover .navbar-toggler-icon {
+  background-color: rgba(255, 255, 255, 0.1); /* Légère couleur de fond au survol */
+}
+
+.navbar-toggler:focus .navbar-toggler-icon,
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-color: rgba(255, 255, 255, 0.2); /* Fond visible lorsque le menu est ouvert */
+}
+/*------------------------------------------------*/
+
+
+/* Grille d'images pour les animaux */
+.animal-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.animal-grid img {
+  max-width: 320px;/*150px*/
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Avis des visiteurs */
+#avis .avis-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#avis .avis {
+  background-color: #f2f2f2;
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 300px;
+  width: 100%;
+  font-style: italic;
+}
+
+#avis .avis cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Bouton Voir tous les avis */
+#avis button {
+  margin-top: 1rem;
+  background-color: #f2a007;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#avis button:hover {
+  background-color: #d28b06;
+}
+
+/* Pied de page */
+footer {
+  background-color: #2b2b2b;
+  color: #fff;
+  padding: 2rem 0;
+}
+
+footer h5 {
+  color: #f2a007;
+  margin-bottom: 1rem;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin: 0.5rem 0;
+}
+
+footer a {
+  color: #f2a007;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Taille du texte réduite pour les petits écrans */
+  #presentation h1 {
+    font-size: 2rem;
+  }
+
+  #presentation p, section h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Ajustement des grilles d'images */
+  .images-presentation img, .animal-grid img {
+    max-width: 120px;
+  }
+
+  /* Centrage des éléments de navigation */
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Pied de page en mode pile */
+  footer .row {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Logo et images encore plus réduits pour mobiles */
+  .img-logo-1 img {
+    max-width: 80px;
+  }
+
+  .nav-admin-link {
+text-align: center;
+  }
+
+  .images-presentation img, .animal-grid img {
+    max-width: 100px;
+  }
+
+  /* Ajustement de la taille des sections de texte */
+  #presentation h1 {
+    font-size: 1.5rem;
+  }
+
+  #presentation p, section h2 {
+    font-size: 1.2rem;
+  }
+
+  /* Footer centré */
+  footer ul {
+    padding: 0;
+    text-align: center;
+  }
+
+  /* Sections du footer en colonne */
+  footer .col-md-4 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+
+  /*----------------------*/
+  .list-unstyled-footer {
+    text-align: center;
+  }
+  /*----------------------*/
+
+}
+
+/*@media (max-width: 768px) {*/
+  /*nav ul {
+  display: flex;
+  flex-direction: column;
+  }*/
+  
+  /*.container-fluid {
+  display: flex;
+  flex-direction: column !important;*//*
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  
+  padding: 0px !important;*/
+  /*height: auto;
+  }
+}*/
+
+
+/*
+Explications des sections clés du CSS
+Section Header et Menu : Le menu s'aligne en colonne et se centre sur les écrans de petite taille pour une navigation facile.
+
+Images de présentation et Grilles d’animaux : Les images se redimensionnent et les grilles se centrent pour éviter les débordements sur mobile.
+
+Textes et Titres : Les tailles de police sont réduites pour les titres et les paragraphes principaux en dessous de 768px et 576px, permettant ainsi une lecture plus confortable.
+
+Responsive pour le Footer : Sur les petits écrans, les colonnes du footer passent en mode pile, et le texte se centre pour une meilleure lisibilité. Les liens du footer sont espacés et centrés.
+
+Ces ajustements garantissent une expérience utilisateur fluide et bien adaptée sur les petits écrans.
+*/

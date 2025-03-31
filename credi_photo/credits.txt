@@ -1,0 +1,168 @@
+Crédits des images et icônes utilisées dans le projet Garage Vincent Parrot :
+
+1. **Icônes :**
+   - Icône voiture par Freepik (https://www.flaticon.com/authors/freepik) - Source : Flaticon
+   - Icône moteur par Smashicons (https://www.flaticon.com/authors/smashicons) - Source : Flaticon
+
+2. **Photos :**
+   - Photos prises par l'équipe interne du garage.
+   - Photos supplémentaires téléchargées depuis Pixabay (https://pixabay.com).
+
+3. **Autres ressources :**
+   - Police d'écriture : Open Sans (Google Fonts)
+   - Background utilisé sur la page d'accueil : Unsplash (https://unsplash.com)
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crédits Photos</title>
+</head>
+<body>
+    <h1>Crédits Photos</h1>
+    <ul>
+        <li>Icônes téléchargées depuis Flaticon :</li>
+        <ul>
+            <li>"Icône voiture" par <a href="https://www.flaticon.com/authors/freepik">Freepik</a></li>
+            <li>"Icône moteur" par <a href="https://www.flaticon.com/authors/smashicons">Smashicons</a></li>
+        </ul>
+        <li>Photos des véhicules :</li>
+        <ul>
+            <li>Prises par l'équipe interne.</li>
+            <li>Sources libres : ajouter les noms et liens ici.</li>
+        </ul>
+    </ul>
+</body>
+</html>
+
+<p>© Garage Vincent Parrot - <a href="credits.html">Crédits Photos</a></p>
+<footer>
+    <p>© Garage Vincent Parrot - <a href="/credi_photo/credits.txt" target="_blank">Crédits Photos</a></p>
+</footer>
+
+
+Crédits des images et icônes utilisées dans le projet Garage Vincent Parrot :
+
+1. **Icônes :**
+   - Icône voiture par Freepik (https://www.flaticon.com/authors/freepik) - Source : Flaticon
+   - Icône moteur par Smashicons (https://www.flaticon.com/authors/smashicons) - Source : Flaticon
+
+2. **Photos :**
+   - Photos prises par l'équipe interne du garage.
+   - Photos supplémentaires téléchargées depuis Pixabay (https://pixabay.com).
+
+3. **Autres ressources :**
+   - Police d'écriture : Open Sans (Google Fonts)
+   - Background utilisé sur la page d'accueil : Unsplash (https://unsplash.com)
+
+<footer>
+    <p>© Garage Vincent Parrot - <a href="/credi_photo/credits.txt" target="_blank">Crédits Photos</a></p>
+</footer>
+
+git add credi_photo/
+git commit -m "Ajout du dossier dédié aux crédits photos
+
+
+
+
+Vous avez rassemblé un mélange d'images et d'icônes provenant de différentes sources. Pour respecter les droits d'auteur et les licences, voici comment vous pouvez organiser ces informations et intégrer correctement les crédits.
+
+1. Identifier les sources et licences
+Vous avez mentionné des images provenant de :
+
+Unsplash : Images libres, mais attribution recommandée.
+Pexels : Images libres pour usage commercial, attribution non obligatoire mais recommandée.
+Picsum : Génère des images aléatoires, aucune attribution nécessaire.
+Pixabay : Images libres pour usage commercial, attribution non obligatoire mais appréciée.
+Autres (Bootstrap, FontAwesome, RemixIcon, etc.) : Licences spécifiques souvent incluses avec les fichiers téléchargés.
+Étape :
+Passez en revue chaque fichier d'image et notez sa source et licence. Pour les fichiers comme pexels-ionuț-murariu-10678139_(1)_(1).jpg, faites correspondre le nom à son origine sur Pexels.
+
+2. Créer un fichier credits.txt dans le dossier credi_photo
+Listez toutes les ressources utilisées avec leurs sources et auteurs.
+
+Exemple pour votre contenu :
+text
+Copier le code
+Crédits pour les images et icônes utilisées dans le projet Garage Vincent Parrot
+
+1. **Images provenant d'Unsplash :**
+   - "Chad Kirchoff" - https://unsplash.com/photos/xe-e69j6-Ds
+   - "Maxim Hopman" - https://unsplash.com/photos/s4d_ESS0ylA
+
+2. **Images provenant de Pexels :**
+   - "Ionuț Murariu" - https://www.pexels.com/photo/10678139/
+   - "Mike Bird" - https://www.pexels.com/photo/452099/
+
+3. **Images provenant de Pixabay :**
+   - "Wolfgang Claussen" - https://pixabay.com/images/id-84761318/
+
+4. **Images générées par Picsum :**
+   - https://picsum.photos (images générées aléatoirement, attribution non requise)
+
+5. **Icônes et ressources supplémentaires :**
+   - FontAwesome (Licence incluse : LicenceFontAwesome.txt)
+   - Bootstrap Icons (Licence incluse : LicenceIconBootstrap.txt)
+   - RemixIcon (Licence incluse : Accord de licence Apache 2.0)
+
+6. **Autres :**
+   - Photos prises par l'équipe : "homme-mecanicien-cliente-regardent-capot-voiture-discutent-reparations.jpg", etc.
+3. Ajouter les fichiers de licence
+Placez les fichiers de licence que vous avez déjà dans le dossier credi_photo. Cela inclut :
+
+LicenceFontAwesome.txt
+LicenceIconBootstrap.txt
+LicencePexel.txt
+LicencePixabay.txt
+Apache License 2.0
+Si vous n'avez pas encore les fichiers, téléchargez-les depuis les sites officiels des ressources.
+
+4. (Optionnel) Page HTML pour les crédits
+Créez un fichier credits.html pour afficher ces informations sur le site web. Exemple :
+
+html
+Copier le code
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crédits Photos</title>
+</head>
+<body>
+    <h1>Crédits Photos</h1>
+    <ul>
+        <li><strong>Images provenant d'Unsplash :</strong></li>
+        <ul>
+            <li>"Chad Kirchoff" - <a href="https://unsplash.com/photos/xe-e69j6-Ds">Lien</a></li>
+            <li>"Maxim Hopman" - <a href="https://unsplash.com/photos/s4d_ESS0ylA">Lien</a></li>
+        </ul>
+        <li><strong>Images provenant de Pexels :</strong></li>
+        <ul>
+            <li>"Ionuț Murariu" - <a href="https://www.pexels.com/photo/10678139/">Lien</a></li>
+            <li>"Mike Bird" - <a href="https://www.pexels.com/photo/452099/">Lien</a></li>
+        </ul>
+        <li><strong>Icônes et ressources supplémentaires :</strong></li>
+        <ul>
+            <li>FontAwesome (Licence incluse)</li>
+            <li>Bootstrap Icons (Licence incluse)</li>
+            <li>RemixIcon - Licence Apache 2.0</li>
+        </ul>
+    </ul>
+</body>
+</html>
+5. Lien depuis le site
+Ajoutez un lien dans le pied de page ou ailleurs sur le site pour rediriger vers le fichier credits.html :
+
+html
+Copier le code
+<footer>
+    <p>© Garage Vincent Parrot - <a href="/credi_photo/credits.html">Crédits Photos</a></p>
+</footer>
+Avec cette approche, votre projet sera bien documenté et conforme aux règles de droits d'auteur ! Si vous avez des doutes sur certaines images, n'hésitez pas à demander. 😊

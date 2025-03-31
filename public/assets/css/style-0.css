@@ -1,0 +1,489 @@
+body {
+font-family: 'Arial', sans-serif;
+line-height: 1.6;
+margin: 0;
+padding: 0;
+background-color: #f4f4f4;
+}
+
+/*---------------------------------------------------------*/
+
+/* Appliquer Rajdhani pour les titres *//*
+h1, h2, h3 {
+font-family: 'Rajdhani', sans-serif;
+}
+
+/* Appliquer Barlow pour le texte normal *//*
+p, li, a {
+font-family: 'Barlow', sans-serif;
+}
+
+/* La taille de police par défaut pour le body *//*
+body {
+font-size: 1rem; /* 1 rem = taille de la police de l'élément racine (html) *//*
+}
+
+/* Les titres peuvent être légèrement plus grands */
+h1 {
+font-size: 2.5rem; /* 2.5 fois la taille de base */
+}
+
+h2 {
+font-size: 2rem;
+}
+/*
+p {
+font-size: 1.2rem; /* Un peu plus grand que le texte par défaut *//*
+}
+
+/* Les liens et autres éléments *//*
+a {
+font-size: 1.1rem;
+}
+
+/*-------------------------- ANIMATION CSS ------------------------------*/
+
+/* CSS pour l'animation */
+@keyframes slideIn {
+0% {
+  transform: translateX(-100%);
+}
+100% {
+  transform: translateX(0);
+}
+}
+
+/* CSS pour le titre et la description */
+h1 {
+animation: slideIn 1s ease-out;
+display: flex;
+flex-direction: row;
+align-items: center;
+align-content: center;
+justify-content: center;
+width: 100%;
+text-align: center !important;
+}
+
+/*p {
+animation: slideIn 1s ease-out 0.5s;
+}*/
+/*-------------------------------------------------------------------*/
+
+/*-- ajouter au code le 10/10/2024 --*/
+.img-logo-1 {
+padding: 0px;
+
+}
+.logo {
+border: 1px solid black !important; 
+border-radius: 0%;
+padding: 0px;
+}
+
+header {
+background: #4CAF50; /* Vert écolo */
+color: #fff;
+padding: 10px 10px;
+text-align: center;
+}
+
+.navbar {
+/*border: 1px solid red !important;*/
+padding: 0px !important;/*----------------------------------------20px*/
+}/**/
+
+.nav-link {
+color: white !important;
+}
+
+nav ul {
+list-style: none;
+padding: 0;
+}
+
+nav ul li {
+display: inline;
+/*margin: 0 15px;*/ /*-- desactver pour test --*/
+padding: 15px;
+}
+/*-- ajouter au code le 10/10/2024 --*/
+ul {
+margin: 0px !important;
+padding: 0px !important;
+}
+
+nav a {
+color: #fff;
+text-decoration: none;
+}
+
+.collapse {
+justify-content: space-evenly;
+} 
+/*
+.container-fluid {
+display: flex;
+/*flex-direction: row !important;
+*//*
+
+padding: 0px !important; *//*---------------------------------------------*/
+/*
+}/**/
+
+/*-- ajouter au code le 10/10/2024 --*/
+.title, h1, p {
+display: flex;
+/*flex-direction: row;*/
+align-items: center;
+align-content: center;
+justify-content: center;
+width: 100%;
+text-align: center !important;
+} 
+
+section {
+padding: 20px;
+margin: 10px;
+background: #ffffff; /* Fond blanc pour sections */
+border-radius: 8px;
+}
+
+
+.images-presentation img {
+width: 30%; /* Ajustez la taille des images */
+margin: 5px;
+border-radius: 8px;
+} 
+
+/*-- ajouter au code le 10/10/2024 --*/
+.animal-grid img {
+margin: 5px;
+border-radius: 8px;
+}
+
+.avis-container {
+margin-top: 10px;
+}
+
+.avis {
+background: #e9ffe9; /* Fond léger pour les avis */
+padding: 10px;
+margin: 5px 0;
+border-radius: 8px;
+}
+
+/*footer {
+text-align: center;
+padding: 10px;
+background: #333 !important;
+color: #fff;
+position: relative;
+bottom: 0;
+width: 100%;
+}*/
+
+/*-- RESPONSIVE 66 --*/
+@media (max-width: 768px) {
+nav ul {
+display: flex;
+flex-direction: column;
+}
+
+.container-fluid {
+display: flex;
+flex-direction: column !important;
+justify-content: center;
+align-items: center;
+align-content: center;
+width: 100%;
+
+padding: 0px !important; /*---------------------------------------------*/
+
+}/**/
+.images-presentation img {
+width: 100%;
+}
+
+/*.animal-grid img*/ .grid {
+margin: 5px;
+border-radius: 8px;
+
+
+display: flex;
+flex-direction: column;
+width: 100%;
+}
+
+}
+
+@media (max-width: 768px) {
+h1 {
+font-size: 2rem;
+}
+
+h2 {
+font-size: 1.6rem;
+}
+/*
+p {
+font-size: 1rem;
+}
+
+nav ul {
+flex-direction: column;
+align-items: center;
+}*/
+}
+
+@media (max-width: 480px) {
+h1 {
+font-size: 1.8rem;
+}
+
+h2 {
+font-size: 1.4rem;
+}
+/*
+p {
+font-size: 0.9rem;
+}*/
+}
+
+/* Style général de la navigation */
+/*nav ul {
+display: flex;
+justify-content: space-around; /* Espacement égal des éléments */   /*
+list-style: none; /* Suppression des puces */    /*
+padding: 0;
+margin: 0;
+font-family: 'Barlow', sans-serif; /* Police Barlow */   /*
+}*//*
+
+/* Style des éléments de la liste *//*
+nav li {
+margin: 0 1rem; /* Espacement horizontal des éléments *//*
+}*/
+
+/* Style des liens de navigation *//*
+nav a {
+text-decoration: none;
+color: #333; /* Couleur du texte *//*
+font-size: 1.1rem; /* Taille de texte flexible *//*
+transition: color 0.3s ease; /* Transition fluide lors du survol *//*
+}*/
+
+/* Style au survol des liens */
+nav a:hover {
+color: #008000 !important; /* Couleur au survol pour un effet dynamique */
+background: blanchedalmond;
+border-radius: 8px;
+}
+
+/* Navigation responsive pour les petits écrans */
+@media (max-width: 768px) {
+nav ul {
+flex-direction: column; /* Menu en colonne sur mobile */
+align-items: center;
+}
+
+nav li {
+margin: 0.5rem 0; /* Réduire les marges pour les petits écrans */
+}
+
+nav a {
+font-size: 1rem; /* Réduire la taille des liens sur mobile */
+}
+}
+
+/* Style général du footer */  /*
+footer {
+/*background-color: #f4f4f4;*/   /*
+text-align: center;
+padding: 1.5rem 0;
+font-family: 'Barlow', sans-serif; /* Police Barlow */   /*
+font-size: 1rem; /* Taille de texte relative */   /*
+color: #333;
+}
+
+/* Style du texte de copyright */   /*
+footer p {
+margin: 0;
+}
+
+/* Footer responsive pour les petits écrans */   /*
+@media (max-width: 768px) {
+footer {
+font-size: 0.9rem; /* Réduction de la taille du texte */  /*
+padding: 1rem 0;    /* Réduction de l'espacement vertical */  /*
+}
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/*-- FOOTER --*/
+/*
+.blockfooter {
+display: flex;
+flex-direction: row !important;
+justify-content: space-around;
+align-items: center;
+align-content: center;
+background: #7dc95e;
+height: 125px;
+width: 100%;
+}
+
+.block-ftr {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: row;
+width: 100%;
+}
+
+.content-footer {
+display: flex;
+flex-direction: row;
+text-align: center;
+justify-content: space-around; 
+align-items: center;
+width: 70%;
+}  */
+/*
+.mention-1 {
+display: flex;
+flex-direction: column;
+text-align: left;
+width: 250px;
+color: blue;
+padding: 10px;
+margin-left: 90px;
+margin-right: 90px;
+}
+
+.mention-2 {
+display: flex;
+flex-direction: column;
+text-align: center;
+width: 250px;
+color: blue;
+padding: 10px;
+margin-left: 180px;
+margin-right: 0px;
+} 
+
+.cl-mention {
+display: flex;
+flex-direction: column;
+text-align: left !important;
+width: 250px;
+color: blue;
+}
+
+.cl-contact {
+display: flex;
+flex-direction: row;
+text-align: left !important;
+width: 250px;
+color: blue;
+}       */
+
+
+/*------------------------------------------------------------------------------------------------------- FOOTER --*/
+@media screen  and (max-width: 576px) { 
+.blockfooter {
+
+font-size: 12px;
+display: flex;
+flex-direction: column; 
+width: 100%;
+justify-content: center !important;
+align-content: center !important;
+align-items: center !important;   
+padding: 20px;  
+height: auto;        
+} 
+}
+
+/*--------------------------------------*/
+/*
+.block-ftr {
+display: flex;
+justify-content: center;/*space-around*/ /*
+align-items: center;
+flex-direction: column; 
+width: 100%;/*80%*/  /*
+margin-left: 0px;/*80px*/  /* 
+}  */
+/*-------------------------------------*/
+
+@media screen  and (max-width: 768px) {
+/*
+.content-footer {
+display: flex;
+flex-direction: column;
+
+justify-content: center;
+align-items: center;
+}
+
+.footer-1 ,.footer-2 {
+margin-bottom: 20px !important;
+padding: 10px !important;
+}
+
+.mention-1 {
+display: flex;
+flex-direction: column;
+
+text-align: center;
+width: auto !important;
+color: blue;
+padding: 0px;
+margin-left: 0px !important;
+margin-right: 0px !important;
+}
+
+.mention-2 {
+display: flex;
+flex-direction: column;
+text-align: center;
+width: auto !important;
+color: blue;
+
+padding: 0px;
+margin-left: 0px !important;
+margin-right: 0px !important;
+}                                             
+
+.cl-mention {
+display: flex;
+flex-direction: row;
+text-align: center;
+justify-content: center;
+width: auto;
+}
+
+.cl-contact {
+display: flex;
+text-align: center;
+justify-content: center;
+align-items: center;
+width: auto;
+} */
+
+.bis {
+font-size: 18px;
+}
+
+/*.mention-1, .mention2, a,.cl-mention {
+color: black !important;
+}*/
+
+.block-ftr, .content-footer, .footer-1, .footer-2,  h5, .cl-mention, h5, .cl-contact {
+color: black !important;
+}
+}
+
+

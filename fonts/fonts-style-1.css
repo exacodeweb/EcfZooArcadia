@@ -1,0 +1,36 @@
+/*======================================================= PAGE FONTS =================================================*/
+
+
+/* Ajoutez les styles de typographie ici */
+
+body {
+  font-family: 'Barlow', sans-serif; /* Police par défaut pour le texte */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Rajdhani', sans-serif; /* Police pour les titres */
+}
+
+h2 {
+  font-size: 28px; /* Taille des sous-titres */
+}
+
+p {
+  font-size: 16px; /* Taille du texte */
+}
+
+/* Styles réactifs */
+@media screen and (max-width: 768px) {
+
+  h1 {
+    font-size: 30px; /* Taille du titre h1 pour les petits écrans */
+  } 
+
+  .category h2 {
+      font-size: 20px; /* Taille des sous-titres pour les petits écrans *//*24px*/
+  }
+
+  p {
+      font-size: 14px; /* Taille du texte pour les petits écrans */
+  }
+}

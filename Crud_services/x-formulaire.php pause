@@ -1,0 +1,96 @@
+<?php
+require_once '../config/config_unv.php';
+
+// Vérifie si l'ID du service a été fourni dans l'URL
+if (isset($_GET['id']) && !empty($_GET['id'])) {
+    $id = $_GET['id'];
+
+    // Requête pour récupérer le service correspondant
+    $stmt = $pdo->prepare("SELECT * FROM services WHERE id = ?");
+    $stmt->execute([$id]);
+    $service = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // Vérifie si le service a bien été trouvé
+    if (!$service) {
+        die("<p class='error'>Erreur : Service non trouvé.</p>");
+    }
+} else {
+    die("<p class='error'>Erreur : Aucun identifiant de service fourni.</p>");
+}
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <form id="updateForm" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="<?= $id ?>">
+
+    <!-- Champ pour le nom -->
+    <label for="nom">Nom du service :</label>
+    <!--<input type="text" id="nom" name="nom" value="<!?= htmlspecialchars($service['nom']) ?>" required>-->
+
+    <input type="text" id="nom" name="nom" value="<?= isset($service['nom']) ? htmlspecialchars($service['nom']) : '' ?>" required>
+
+
+    <!-- Champ pour la description -->
+    <label for="description">Description :</label>
+    <!--<textarea id="description" name="description" required><!?= htmlspecialchars($service['description']) ?></textarea>-->
+
+    <textarea id="description" name="description" required><?= isset($service['description']) ? htmlspecialchars($service['description']) : '' ?></textarea>    
+
+    <!-- Affichage de l'image actuelle -->
+    <div class="image-preview" id="preview-container">
+      <?php
+      /*$images = json_decode($service["images"], true);
+      if (!empty($images) && is_array($images)) {
+        foreach ($images as $image) {
+          echo "<img src='../assets/services/" . htmlspecialchars($image) . "' alt='Aperçu' style='width: 100px; height: 100px;'>";
+        }
+      } else {
+        echo "<p>Aucune image sélectionnée</p>";
+      }*/
+
+
+      $images = isset($service["images"]) ? json_decode($service["images"], true) : [];
+
+      if (!empty($images) && is_array($images)) {
+          foreach ($images as $image) {
+              if (!empty($image)) {
+                  echo "<img src='../assets/services/" . htmlspecialchars($image) . "' alt='Aperçu' style='width: 100px; height: 100px;'>";
+              }
+          }
+      } else {
+          echo "<p>Aucune image sélectionnée</p>";
+      }
+
+
+
+      ?>
+    </div>
+
+    <!-- Sélection d’une nouvelle image -->
+    <label for="file-selector">Changer l'image :</label>
+    <input type="file" id="file-selector" name="image">
+
+    <!-- Bouton Modifier -->
+    <button type="submit">Modifier</button>
+
+    <!-- Message de confirmation -->
+    <div id="message"></div>
+  </form>
+
+ 
+  <script src="./ajax.js"></script>
+</body>
+
+</html> 
