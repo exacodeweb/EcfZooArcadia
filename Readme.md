@@ -37,7 +37,7 @@ Vérifiez que les conteneurs tournent bien :
 
 🛠 phpMyAdmin : http://localhost:8088
 
-📂 Importation de la base de données
+### 📂 Importation de la base de données
 
 Si vous avez un fichier de sauvegarde zoo_arcadia.sql, importez-le avec :
 
@@ -58,6 +58,28 @@ Mot de passe : Z00_Arcadia!2024
 Sélectionner la base zoo_arcadia
 
 Importer le fichier zoo_arcadia.sql
+
+### 🔑 Connexion aux comptes utilisateurs
+
+Essayer ces identifiants dans l’espace admin/employé :
+
+Admin
+
+Email : admin@example.com
+
+Mot de passe : José!2024
+
+Employé
+
+Email : employe@example.com
+
+Mot de passe : Martin!2024
+
+Vétérinaire
+
+Email : veterinaire@example.com
+
+Mot de passe : vet123
 
 🛑 Arrêter et supprimer les conteneurs
 
