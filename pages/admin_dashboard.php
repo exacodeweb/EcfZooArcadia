@@ -152,7 +152,8 @@ if ($_SESSION['role'] !== 'admin') {
         <div class="card shadow">
           <div class="card-body text-center">
             <h5 class="card-title">Gestion des animaux</h5>
-            <a href="../manage_animaux/index.php" class="btn btn-secondary w-100">Liste des Animaux</a>
+            <a href="../manage_animaux/index.php" class="btn btn-secondary w-100">Liste-A des Animaux</a>
+            <a href="../Crud_animaux/liste_animaux.php" class="btn btn-secondary w-100">Liste-B des Animaux</a>
           </div>
         </div>
       </div>
