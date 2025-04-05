@@ -696,7 +696,7 @@
   ?>
 
   <section id="services">
-    <h2>Plongez dans nos mondes naturels</h2>
+    <h2>Explorez, Voyagez, Savourez !</h2><!-- Plongez dans nos mondes naturels -->
     <div class="habitat-cards">
       <?php while ($service = $stmt->fetch()): ?>
         <div class="card">

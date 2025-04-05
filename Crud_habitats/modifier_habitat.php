@@ -53,6 +53,9 @@ if (isset($_GET['id'])) {
         body { font-family: Arial, sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
         .container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); max-width: 500px; width: 100%; }
         h2 { text-align: center; }
+
+        /*.message { text-align: center; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 10px; border-radius: 5px; font-weight: bold; margin-bottom: 10px; }*/
+
         label { font-weight: bold; display: block; margin-top: 10px; }
         input, textarea { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; }
         .image-preview img { max-width: 100px; border-radius: 5px; border: 1px solid #ddd; }
@@ -64,6 +67,9 @@ if (isset($_GET['id'])) {
 
 <div class="container">
     <h2>Modifier un Habitat</h2>
+
+    <!--?php echo "<p class='message'> Habitat modifié avec succès !</p>"; ?>-->
+
     <form method="post" enctype="multipart/form-data">
         <label>Nom de l'habitat :</label>
         <input type="text" name="nom" value="<?= htmlspecialchars($service['nom']); ?>" required>

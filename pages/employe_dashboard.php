@@ -65,6 +65,25 @@ if (!$user) {
 }
 ?>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -95,6 +114,7 @@ if (!$user) {
     .card-header {
       font-size: 1.2rem;
       font-weight: bold;
+      background-color: #2A7E50;
     }
 
     .btn {
@@ -111,6 +131,7 @@ if (!$user) {
       height: auto;
     }
   </style>
+
 </head>
 
 <body class="bg-light" id="img-font">
@@ -128,22 +149,22 @@ if (!$user) {
 
 
           <!--<li class="nav-item"><a class="nav-link" href="../avis_system_test/moderation-avis.php">Modérer Avis</a></li>-->
-          <li class="nav-item"><a class="nav-link btn btn-danger text-white" href="../config/logout.php">Déconnexion</a></li>
+          <li class="nav-item"><a class="nav-link btn btn-danger text-white" href="./logout.php">Déconnexion</a></li><!-- ../config/logout.php --><!-- ../service_veterinaire/logout.php -->
         </ul>
       </div>
     </div>
   </nav>
 
+  <!-------------------------------
   <div class="container py-5">
     <div class="row">
       <div class="col-lg-8 mx-auto">
         <div class="card shadow-lg border-0">
 
-          <div class="card-header bg-success text-white text-center">
-            <h3>Bienvenue, <?= htmlspecialchars($user['prenom'] . ' ' . $user['nom']); ?></h3>
-            <p class="mb-0"><?= htmlspecialchars($user['email']); ?></p>
-          </div>
-
+          <div class="card-header bg-success text-white text-center"> 
+            <h3>Bienvenue, <!?= htmlspecialchars($user['prenom'] . ' ' . $user['nom']); ?></h3>
+            <p class="mb-0"><!?= htmlspecialchars($user['email']); ?></p>
+          </div> ---------------------------------->
 
           <!-- Carte Bienvenue --><!----------------
           <div class="col-lg-12 col-md-6">
@@ -157,37 +178,78 @@ if (!$user) {
             </div>
           </div>-->
 
-
+          <!-- Contenu principal --> <!----------------------------
           <div class="card-body">
             <div class="row">
-              <div class="col-md-6">
+              <div class=" col-md-6"> ---------------> <!-- card-body text-center --> <!-----------------
                 <a href="../avis_system_test/moderation-avis.php" class="btn btn-primary w-100 mb-3">Modérer les Avis</a>
-
+                ---------------------->
                 <!--<a href="modifier-mot-de-passe.php" class="btn btn-warning w-100 mb-3">Modifier Mot de Passe</a>-->
 
                 <!--<a href="../password/modifier-mot-de-passe.php" class="btn btn-warning w-100 mb-3">Modifier Mot de Passe test</a>-->
 
                 <!--<a href="../password/get_mdp.php" class="btn btn-warning w-100 mb-3">Modifier Mot de Passe</a>-->
-
+              <!-------------------------
               </div>
               <div class="col-md-6">
                 <a href="../service_employe/liste_consommation.php" class="btn btn-info w-100 mb-3">Historique Consommation</a>
-                <a href="../service_employe/ajouter_consommation.php" class="btn btn-secondary w-100 mb-3">Ajouter Consommations</a>
-                <!--<a href="../manage_animaux/index.php" class="btn btn-primary w-100 mb-3">Gerer les animaux</a>-->
+                <a href="../service_employe/ajouter_consommation.php" class="btn btn-secondary w-100 mb-3">Ajouter Consommations</a> ------------------>
+                <!--<a href="../manage_animaux/index.php" class="btn btn-primary w-100 mb-3">Gerer les animaux</a>--> <!----------------------------
               </div>
 
             </div>
             <hr>
-            <a href="./logout.php" class="btn btn-danger w-100">Déconnexion</a>
-            <!--<a href="../config/logout.php" class="btn btn-danger w-100">Déconnexion</a>-->
+            <a href="./logout.php" class="btn btn-danger w-100">Déconnexion</a> ---------------------->
+            <!--<a href="../config/logout.php" class="btn btn-danger w-100">Déconnexion</a>--> <!--------------------------
           </div>
         </div>
       </div>
     </div>
+  </div>  --------------------------->
+
+
+
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="card shadow-lg border-0">
+
+          <div class="card-header bg-success text-white text-center">
+            <h3>Bienvenue, <?= htmlspecialchars($user['prenom'] . ' ' . $user['nom']); ?></h3>
+            <p class="mb-0"><?= htmlspecialchars($user['email']); ?></p>
+          </div>
+
+          <!-- Contenu principal -->
+          <div class="container my-4">
+            <div class="row justify-content-center">
+              <div class="col-lg-6 col-md-8">
+                <div class="card shadow">
+                  <!--<div class="card-header text-white text-center">-----><!-- bg-info  --> <!--
+                    <h3>Bienvenue, <!?= isset($_SESSION['nom']) ? htmlspecialchars($_SESSION['nom']) : 'Utilisateur'; ?> (Roux)</h3>
+                  </div>-->
+                  <div class="card-body text-center">
+                    <a href="../avis_system_test/moderation-avis.php" class="btn btn-primary w-100 mb-3">Modérer les Avis</a>
+                    <a href="../service_employe/liste_consommation.php" class="btn btn-info w-100 mb-3">Historique Consommation</a>
+                    <a href="../service_employe/ajouter_consommation.php" class="btn btn-secondary w-100 mb-3">Ajouter Consommations</a>
+
+                    <a href="./logout.php" class="btn btn-danger w-100">Déconnexion</a><!-- ../service_veterinaire/logout.php -->
+                  </div><!--  -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
+
+
+
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
+

@@ -44,6 +44,11 @@ $selected_animal_id = $_GET['animal_id'] ?? '';
     .card-title {
       text-align: center;
     }
+
+    .card-header {
+      background-color: #2A7E50;
+    }
+    
   </style>
 </head>
 <body>
@@ -51,7 +56,7 @@ $selected_animal_id = $_GET['animal_id'] ?? '';
     <div class="row justify-content-center">
       <div class="col-md-8 col-lg-6">
         <div class="card shadow-sm">
-          <div class="card-header bg-info text-white">
+          <div class="card-header text-white"><!-- bg-info -->
             <h3 class="card-title mb-0">Remplir un Compte-Rendu</h3>
           </div>
           <div class="card-body">

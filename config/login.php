@@ -132,8 +132,8 @@ try {
 </html>
 
 
-// Inclure le fichier de configuration
+<!--// Inclure le fichier de configuration
 //$config = include('../config/config.php');  pause
 //-------------------------$config = include('../config/config.php');
 // Démarrer une session
-//-------------------------session_start();
+//-------------------------session_start();-->
