@@ -59,7 +59,7 @@ return [
         'dbname' => 'zoo_arcadia',  // Ton nom de base de données : nom_de_la_base
         'charset' => 'utf8mb4',  // Le jeu de caractères
         'username' => 'utilisateur_zoo',  // Ton utilisateur de base de données : root
-        'password' => 'ZOO_Arcadia!2024',  // Ton mot de passe
+        'password' => 'Zoo8087arcadia',  // Ton mot de passe ZOO_Arcadia!2024
     ],
 ];
 

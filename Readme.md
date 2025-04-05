@@ -57,7 +57,7 @@ Mot de passe : Z00_Arcadia!2024
 
 Sélectionner la base zoo_arcadia
 
-Importer le fichier zoo_arcadia.sql
+Importer le fichier backup/zoo_arcadia.sql
 
 ### 🔑 Connexion aux comptes utilisateurs
 
