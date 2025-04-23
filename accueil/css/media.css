@@ -1,0 +1,52 @@
+    /*==========================*/
+    /* Responsive Design */
+    /*==========================*/
+    /* Animations au défilement */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Empilement des sections */
+    @media (max-width: 768px) {
+
+      #habitats .habitat-cards,
+      #services .services-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 100%;
+      }
+    }
+
+    /* Responsive section habitat*/
+    @media (max-width: 768px) {
+
+      .habitats-list {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .habitat {
+        width: 90%;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1200px) {
+      .habitats-list {
+        gap: 15px;
+      }
+
+      .habitat {
+        width: 45%;
+      }
+    }

@@ -16,7 +16,6 @@ if (!isset($pdo)) {
   die("Erreur : La connexion à la base de données n'est pas disponible.");
 }
 
-
 if (!isset($_SESSION['user_id'])) {
   header('Location: ../config/login.php');
   exit();
@@ -153,8 +152,8 @@ if (!$user) {
                     <h3>Bienvenue, <!?= isset($_SESSION['nom']) ? htmlspecialchars($_SESSION['nom']) : 'Utilisateur'; ?> (Roux)</h3>
                   </div>-->
                   <div class="card-body text-center">
-                    <a href="../service_veterinaire/ajouter_compte_rendu.php" class="btn btn-primary w-100 mb-3">Ajouter un compte rendu</a>
-                    <a href="../service_veterinaire/historique_comptes_rendus.php" class="btn btn-secondary w-100 mb-3">Historique compte rendu</a>
+                    <a href="../service_veterinaire/ajouter_compte_rendu.php" class="btn btn-primary w-100 mb-3">Ajouter un compte rendu</a><!-- Ajouter un compte rendu -->
+                    <a href="../service_veterinaire/historique_comptes_rendus.php" class="btn btn-secondary w-100 mb-3">Historique compte rendu</a><!-- Historique compte rendu -->
                     <a href="#../service_veterinaire/avis_habitat.php" class="btn btn-success w-100 mb-3">Ajouter un commentaire habitat</a>
                     <a href="../service_veterinaire/logout.php" class="btn btn-danger w-100">Déconnexion</a><!--  -->
                   </div><!--  -->

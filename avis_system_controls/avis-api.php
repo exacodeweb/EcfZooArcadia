@@ -33,4 +33,16 @@ try {
     http_response_code(500);
     echo json_encode(["error" => "Erreur lors de la récupération des avis."]);
 }
-?>
+?> 
+
+<!-- 
+API de type GET qui :
+
+Se connecte à une base de données (db_config.php),
+
+Récupère des avis approuvés (statut = 'valide'),
+
+Retourne ces avis au format JSON,
+
+Et peut être utilisé par un client frontend (comme un script JS) via fetch() ou autre.
+-->

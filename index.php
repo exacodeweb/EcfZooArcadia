@@ -708,6 +708,7 @@
           <h3><?= htmlspecialchars($service['nom']) ?></h3>
         
           <p><?= htmlspecialchars($service['description']) ?></p>
+
         </div>
       <?php endwhile; ?>
     </div>
@@ -734,7 +735,7 @@
     <button onclick="window.location.href='./avis_system_test/soumetre-avis.html'" class="btn btn-secondary mt-3">Laisser un avis</button>
 
     <!--<button onclick="window.location.href='./views/soumetre-avis.html'" class="btn btn-secondary mt-3">Laisser un avis</button>-->
-
+   
   </section>
 
   <!-- Section Actualités -->
@@ -771,7 +772,7 @@
     /*--------------------------------------------------*/
   </style>
 
-  <!-- API -->
+  <!-- C’est un frontend script (côté client) qui consomme une API backend (côté serveur). -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const avisContainer = document.querySelector(".avis-container");

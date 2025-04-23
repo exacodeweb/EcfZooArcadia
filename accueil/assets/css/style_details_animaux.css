@@ -1,0 +1,78 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.animal-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.animal-images img {
+    width: 200px;
+    height: 150px;/*auto*/
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    transition: transform 0.3s ease;
+}
+
+.animal-images img:hover {
+    transform: scale(1.1);
+    border-color: #3498db;
+}
+
+.reports-section {
+    margin-top: 40px;
+}
+
+h2 {
+    font-size: 28px;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.report-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.report-card p {
+    margin: 5px 0;
+}
+
+.report-card strong {
+    color: #2c3e50;
+}
+
+.error {
+    color: #e74c3c;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+}

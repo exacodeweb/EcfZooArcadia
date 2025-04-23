@@ -1,11 +1,12 @@
 <?php
+// Classe pour gérer les contacts dans la base de données
 class Contact {
     private $pdo;
-
+    // Constructeur avec injection de PDO
     public function __construct($pdo) {
         $this->pdo = $pdo;
     }
-
+    // Ajoute une nouvelle demande de contact dans la BDD
     public function ajouterContact($nom, $email, $message) {
         $sql = "INSERT INTO contacts (nom, email, message) VALUES (:nom, :email, :message)";
         $stmt = $this->pdo->prepare($sql);

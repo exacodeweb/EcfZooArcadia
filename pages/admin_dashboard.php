@@ -176,6 +176,8 @@ if ($_SESSION['role'] !== 'admin') {
         </div>
       </div>
 
+      <a href="../contact/view_contacts.php">Voir les contacts</a><!-- ../pages/view_contacts.php -->
+
     </div>
   </div>
  
