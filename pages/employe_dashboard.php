@@ -124,7 +124,7 @@ if (!$user) {
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="./modifier-mot-de-passe.php">Modifier Mot de Passe</a></li>
+          <!--<li class="nav-item"><a class="nav-link" href="../pages/modifier-mot-de-passe.php">Modifier Mot de Passe</a></li>-->
 
 
 
@@ -207,9 +207,10 @@ if (!$user) {
                   </div>-->
                   <div class="card-body text-center">
                     <a href="../avis_system_test/moderation-avis.php" class="btn btn-primary w-100 mb-3">Modérer les Avis</a>
-                    <a href="../service_employe/liste_consommation.php" class="btn btn-info w-100 mb-3">Historique Consommation</a>
-                    <a href="../service_employe/ajouter_consommation.php" class="btn btn-secondary w-100 mb-3">Ajouter Consommations</a>
-
+                    <a href="../service_employe/ajouter_consommation.php" class="btn btn-secondary w-100 mb-3">Ajouter Consommations</a>                    
+                    <a href="../service_employe/liste_consommation-emp.php" class="btn btn-info w-100 mb-3">Historique Consommation</a>
+                    <!--<a href="../service_veterinaire/historique_comptes_rendus.php" class="btn btn-secondary w-100 mb-3">Historique compte rendu</a>-->
+                    <!--<a href="../Crud_services/liste_services-emp.php" class="btn btn-info w-100 mb-3">Liste Service</a>-->
                     <a href="./logout.php" class="btn btn-danger w-100">Déconnexion</a><!-- ../service_veterinaire/logout.php -->
                   </div><!--  -->
                 </div>

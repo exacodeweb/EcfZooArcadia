@@ -111,65 +111,46 @@ try {
 
 
 
+
+
 <!--?php
-require_once '../config/config_unv.php';
-//$pdo = getPDO();
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $pdo = new PDO('mysql:host=localhost;dbname=zoo_arcadia;charset=utf8mb4', 'root', '');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-// Récupération et sécurisation des données du formulaire
-$nom = $_POST['nom_visiteur'] ?? '';
-$email = $_POST['email'] ?? '';
-$date_reservation = $_POST['date_visite'] ?? '';
-$service_id = $_POST['service_id'] ?? '';
-$nb_adultes = (int) ($_POST['nb_adultes'] ?? 0);
-$nb_enfants = (int) ($_POST['nb_enfants'] ?? 0);
-$nb_etudiants = (int) ($_POST['nb_etudiants'] ?? 0);
+    // Récupérer les valeurs
+    $nom = $_POST['nom_visiteur'];
+    $email = $_POST['email'];
+    $date = $_POST['date_visite'];
+    $type = $_POST['type_visite'];
+    $adultes = (int)$_POST['nb_adultes'];
+    $enfants = (int)$_POST['nb_enfants'];
+    $etudiants = (int)$_POST['nb_etudiants'];
 
-try {
-    // 1. Vérifier si le service existe et récupérer les bons prix
-    $stmt = $pdo->prepare("SELECT id, prix_adulte, prix_enfant, prix_etudiant FROM types_visite WHERE id = ?");
-    $stmt->execute([$service_id]);
-    $typeVisite = $stmt->fetch(PDO::FETCH_ASSOC);
+    // Prix par type de billet
+    $stmt = $pdo->prepare("SELECT * FROM types_visite WHERE nom_type = ?");
+    $stmt->execute([$type]);
+    $infosTarifs = $stmt->fetch();
 
-    if (!$typeVisite) {
-        throw new Exception("Le type de visite sélectionné est introuvable.");
+    if (!$infosTarifs) {
+        die("Type de visite non valide.");
     }
 
-    // 2. Calcul du prix total
-    $total_prix = (
-        $nb_adultes * $typeVisite['prix_adulte'] +
-        $nb_enfants * $typeVisite['prix_enfant'] +
-        $nb_etudiants * $typeVisite['prix_etudiant']
-    );
+    $prixTotal = ($adultes * $infosTarifs['prix_adulte']) +
+                 ($enfants * $infosTarifs['prix_enfant']) +
+                 ($etudiants * $infosTarifs['prix_etudiant']);
 
-    // 3. Insertion de la réservation dans la base
-    $sql = "INSERT INTO reservations 
-            (service_id, date_reservation, nom, email, nb_adultes, nb_enfants, nb_etudiants, total_prix, statut) 
-            VALUES 
-            (:service_id, :date_reservation, :nom, :email, :nb_adultes, :nb_enfants, :nb_etudiants, :total_prix, :statut)";
+    // Insertion
+    $stmt = $pdo->prepare("INSERT INTO reservations 
+        (nom_visiteur, email, date_visite, type_visite, nb_adultes, nb_enfants, nb_etudiants, total_prix) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    
+    $stmt->execute([$nom, $email, $date, $type, $adultes, $enfants, $etudiants, $prixTotal]);
 
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([
-        ':service_id' => $typeVisite['id'],
-        ':date_reservation' => $date_reservation,
-        ':nom' => $nom,
-        ':email' => $email,
-        ':nb_adultes' => $nb_adultes,
-        ':nb_enfants' => $nb_enfants,
-        ':nb_etudiants' => $nb_etudiants,
-        ':total_prix' => $total_prix,
-        ':statut' => 'en_attente'
-    ]);
-
-    // 4. Redirection ou confirmation
-    header("Location: confirmation.php?success=1");
-    exit;
-
-} catch (Exception $e) {
-    echo "Erreur lors de la réservation : " . $e->getMessage();
+    echo "<h2>Merci pour votre réservation !</h2>";
+    echo "<p>Un e-mail de confirmation vous sera envoyé sous peu.</p>";
+    echo "<p>Montant total : " . number_format($prixTotal, 2) . " €</p>";
+} else {
+    echo "Méthode non autorisée.";
 }
-
-
-
-
-
-
+-->

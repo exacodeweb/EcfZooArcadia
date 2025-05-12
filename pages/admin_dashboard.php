@@ -93,11 +93,22 @@ if ($_SESSION['role'] !== 'admin') {
     <!-- Grille de cartes pour les actions -->
     <div class="row g-3 dashboard-grid">
 
-      <div class="col-md-6 col-lg-4">
+      <!--<div class="col-md-6 col-lg-4">
         <div class="card shadow">
           <div class="card-body text-center">
             <h5 class="card-title">Sécurité du compte</h5>
             <a href="modifier-mot-de-passe.php" class="btn btn-warning w-100">Modifier mon mot de passe</a>
+          </div>
+        </div>
+      </div>-->
+
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow">
+          <div class="card-body text-center">
+            <h5 class="card-title">Gestion des contacts</h5><!-- Sécurité du compte -->
+            <!--<a href="modifier-mot-de-passe.php" class="btn btn-warning w-100">Modifier mon mot de passe</a>-->
+            <a href="../pages/view_contacts.php" class="btn btn-info w-100">Voir les contacts</a>
           </div>
         </div>
       </div>
@@ -163,6 +174,8 @@ if ($_SESSION['role'] !== 'admin') {
           <div class="card-body text-center">
             <h5 class="card-title">Comptes-rendus vétérinaires</h5>
             <a href="../service_veterinaire/comptes_rendus.php" class="btn btn-secondary w-100">Voir Comptes-rendus</a>
+          
+            <a href="../service_veterinaire/historique_avis_habitat.php" class="btn btn-secondary w-100">Voir Commentaires</a>
           </div>
         </div>
       </div>
@@ -176,7 +189,7 @@ if ($_SESSION['role'] !== 'admin') {
         </div>
       </div>
 
-      <a href="../contact/view_contacts.php">Voir les contacts</a><!-- ../pages/view_contacts.php -->
+      <!--<a href="../contact/view_contacts.php">Voir les contacts</a>--><!-- ../pages/view_contacts.php -->
 
     </div>
   </div>

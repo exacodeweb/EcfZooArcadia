@@ -1,4 +1,104 @@
 <?php
+session_start();
+require './config_unv.php';
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $email = $_POST['email'] ?? '';
+    $mot_de_passe = $_POST['mot_de_passe'] ?? '';
+
+    $pdo = new PDO("mysql:host=db;dbname=zoo_arcadia;charset=utf8mb4", "utilisateur_zoo", "ZOO_Arcadia!2024", [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+    ]);
+
+    $sql = "SELECT * FROM utilisateurs WHERE email = :email LIMIT 1";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(":email", $email);
+    $stmt->execute();
+
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user && password_verify($mot_de_passe, $user['mot_de_passe'])) {
+        // Connexion réussie : on enregistre le rôle
+        $_SESSION['utilisateur_id'] = $user['id'];
+        $_SESSION['utilisateur_role'] = $user['role'];
+
+        // Pour vétérinaire uniquement
+        if ($user['role'] === 'veterinaire') {
+            $_SESSION['veterinaire_id'] = $user['id'];
+        }
+
+        header("Location: tableau_de_bord.php");
+        exit;
+    } else {
+        echo "Identifiants incorrects.";
+    }
+}
+?>
+
+
+
+
+<?php
+require './config_unv.php';
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    try {
+        if (
+            empty($_POST['habitat_id']) ||
+            empty($_POST['veterinaire_id']) ||
+            empty(trim($_POST['commentaire']))
+        ) {
+            throw new Exception("Tous les champs sont obligatoires !");
+        }
+
+        $habitat_id = (int) $_POST['habitat_id'];
+        $veterinaire_id = (int) $_POST['veterinaire_id'];
+        $commentaire = trim($_POST['commentaire']);
+
+        $pdo = new PDO("mysql:host=db;dbname=zoo_arcadia;charset=utf8mb4", "utilisateur_zoo", "Z00_Arcadia!2024", [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+        ]);
+
+        $sql = "INSERT INTO avis_habitats (habitat_id, veterinaire_id, commentaire, date_creation)
+                VALUES (:habitat_id, :veterinaire_id, :commentaire, NOW())";
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':habitat_id', $habitat_id, PDO::PARAM_INT);
+        $stmt->bindParam(':veterinaire_id', $veterinaire_id, PDO::PARAM_INT);
+        $stmt->bindParam(':commentaire', $commentaire, PDO::PARAM_STR);
+
+        if ($stmt->execute()) {
+            header("Location: avis_habitat_success.php?message=Avis ajouté avec succès !");
+            exit;
+        } else {
+            throw new Exception("Erreur lors de l'ajout de l'avis.");
+        }
+
+    } catch (Exception $e) {
+        header("Location: avis_habitat_error.php?error=" . urlencode($e->getMessage()));
+        exit;
+    }
+} else {
+    header("Location: avis_habitat.php");
+    exit;
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--?php
 require './config_unv.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,7 +118,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Connexion à la base de données
-        $pdo = new PDO("mysql:host=localhost;dbname=zoo_arcadia;charset=utf8mb4", "root", "G1i9e6t3", [
+        //$pdo = new PDO("mysql:host=localhost;dbname=zoo_arcadia;charset=utf8mb4", "root", "G1i9e6t3", [
+        $pdo = new PDO("mysql:host=db;dbname=zoo_arcadia;charset=utf8mb4", "utilisateur_zoo", "Zoo_Arcadia!2024", [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         ]);
 
@@ -44,13 +145,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } else {
     // Redirection si la page est accédée sans POST
-    header("Location: avis_habitat_form.php");
+    header("Location: avis_habitat.php");
     exit;
 }
 ?>
 
 
-
+      -->
 
 
 

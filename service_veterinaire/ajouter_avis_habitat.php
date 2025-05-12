@@ -1,21 +1,21 @@
-<?php 
-require_once '../config/config_unv.php'; 
+<?php
+require_once '../config/config_unv.php';
 
 // Traitement du formulaire
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // On récupère les données du formulaire
-    $veterinaire_id = $_POST['veterinaire_id'];  // ID du vétérinaire
-    $habitat_id = $_POST['habitat_id'];          // ID de l'habitat
-    $commentaire = $_POST['commentaire'];        // Commentaire
-    
-    // Préparer la requête pour l'insertion des données dans la base de données
-    $stmt = $pdo->prepare("INSERT INTO avis_habitats (veterinaire_id, habitat_id, commentaire) 
-                           VALUES (?, ?, ?)");
-    // Exécution de la requête
-    $stmt->execute([$veterinaire_id, $habitat_id, $commentaire]);
+  // On récupère les données du formulaire
+  $veterinaire_id = $_POST['veterinaire_id'];  // ID du vétérinaire
+  $habitat_id = $_POST['habitat_id'];          // ID de l'habitat
+  $commentaire = $_POST['commentaire'];        // Commentaire
 
-    // Affichage d'un message de succès
-    echo "<div class='alert alert-success text-center'>Compte-rendu ajouté avec succès.</div>";
+  // Préparer la requête pour l'insertion des données dans la base de données
+  $stmt = $pdo->prepare("INSERT INTO avis_habitats (veterinaire_id, habitat_id, commentaire) 
+                           VALUES (?, ?, ?)");
+  // Exécution de la requête
+  $stmt->execute([$veterinaire_id, $habitat_id, $commentaire]);
+
+  // Affichage d'un message de succès
+  echo "<div class='alert alert-success text-center'>Compte-rendu ajouté avec succès.</div>";
 }
 
 // Récupérer la liste des habitats pour afficher dans le formulaire
@@ -23,37 +23,43 @@ $stmt = $pdo->query("SELECT id, nom FROM habitats ORDER BY nom ASC");
 $habitats = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Si un habitat est passé en GET, le sélectionner par défaut
-$selected_habitat_id = $_GET['habitat_id'] ?? ''; 
+$selected_habitat_id = $_GET['habitat_id'] ?? '';
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ajout Compte-Rendu</title>
+  <title>ajout avis habitat</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">-->
   <style>
     body {
       background-color: #f8f9fa;
     }
+
     .card-title {
       text-align: center;
     }
+
     .card-header {
       background-color: #2A7E50;
     }
-
   </style>
 </head>
+
 <body>
   <div class="container my-5">
     <div class="row justify-content-center">
       <div class="col-md-8 col-lg-6">
         <div class="card shadow-sm">
           <div class="card-header text-white"><!-- bg-info  -->
-            <h3 class="card-title mb-0">Remplir un Compte-Rendu Habitat</h3>
+            <h3 class="card-title mb-0">Laisser un Avis Habitat</h3>
           </div>
           <div class="card-body">
             <form method="post">
@@ -85,18 +91,63 @@ $selected_habitat_id = $_GET['habitat_id'] ?? '';
                 <textarea class="form-control" id="commentaire" name="commentaire" required></textarea>
               </div>
 
-              <!-- Bouton de soumission -->
+              <!-- Bouton de soumission --> <!--
               <button type="submit" class="btn btn-success w-100">Enregistrer</button>
+
+
+              <div class="text-center mt-3">
+              <a href="../pages/veterinaire_dashboard.php" class="text-decoration-none btn btn-secondary w-100">🔙 Retour --> <!--à la liste--> <!--</a>
+            </div>
+
+            <div class="text-center mt-3">
+            <button type="reset" class="btn btn-warning w-100">
+              <a class="btn-warning bi bi-arrow-counterclockwise"></a> Réinitialiser
+            </button>
+            </div>-->
+
+
+              <!-- Bouton de soumission --><!--
+              <button type="submit" class="btn btn-success w-100 mb-2">
+                ✅ Enregistrer
+              </button>-->
+
+              <!-- Bouton de retour --><!--
+              <a href="../pages/veterinaire_dashboard.php" class="btn btn-secondary w-100 mb-2">
+                🔙 Retour
+              </a>-->
+
+              <!-- Bouton de réinitialisation --><!--
+              <button type="reset" class="btn btn-warning w-100">
+                🔄 Réinitialiser
+              </button>-->
+
+
+              <!-- Bouton de soumission -->
+              <button type="submit" class="btn btn-success w-100 mb-2">
+                <i class="bi bi-check-circle me-2"></i> Enregistrer
+              </button>
+
+              <!-- Bouton de retour -->
+              <a href="../pages/veterinaire_dashboard.php" class="btn btn-secondary w-100 mb-2">
+                <i class="bi bi-arrow-left-circle me-2"></i> Retour
+              </a>
+
+              <!-- Bouton de réinitialisation -->
+              <button type="reset" class="btn btn-warning w-100">
+                <i class="bi bi-arrow-counterclockwise me-2"></i> Réinitialiser
+              </button>
+
             </form>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
-  <!-- Bootstrap JS Bundle -->  
+
+  <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
 
 
@@ -147,7 +198,7 @@ $selected_animal_id = $_GET['animal_id'] ?? '';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ajout Compte-Rendu</title>  --------------------->
-  <!-- Bootstrap CSS -->   <!---------------------------
+<!-- Bootstrap CSS --> <!---------------------------
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
@@ -169,7 +220,7 @@ $selected_animal_id = $_GET['animal_id'] ?? '';
           <div class="card-body">
 
             <form method="post">   ------------------------->
-              <!-- Sélection de l'animal -->  <!--------------------------
+<!-- Sélection de l'animal --> <!--------------------------
               <div class="mb-3">
                 <label for="animal_id" class="form-label">Sélectionnez l'animal :</label>
                 <select name="animal_id" id="animal_id" class="form-control" required>
@@ -181,8 +232,8 @@ $selected_animal_id = $_GET['animal_id'] ?? '';
                   <!?php endforeach; ?>
                 </select>
               </div>  ------------------------------>
-              
-              <!-- ID du vétérinaire (à remplacer par celui de l'utilisateur connecté) -->  <!-------------------
+
+<!-- ID du vétérinaire (à remplacer par celui de l'utilisateur connecté) --> <!-------------------
               <input type="hidden" name="veterinaire_id" value="3">
               
               <div class="mb-3">
@@ -213,8 +264,8 @@ $selected_animal_id = $_GET['animal_id'] ?? '';
       </div>
     </div>
   </div>  --------------------------->
-  
-  <!-- Bootstrap JS Bundle -->  <!---------------------------
+
+<!-- Bootstrap JS Bundle --> <!---------------------------
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>  -->
@@ -260,7 +311,7 @@ $selected_animal_id = $_GET['animal_id'] ?? '';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ajout Compte-Rendu</title> --------------------------------->
-  <!-- Bootstrap CSS --> <!-----------------------------
+<!-- Bootstrap CSS --> <!-----------------------------
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
@@ -282,7 +333,7 @@ $selected_animal_id = $_GET['animal_id'] ?? '';
           <div class="card-body">
 
             <form method="post">   ------------------------------------>
-              <!-- Sélection de l'animal -->  <!--------------------------------
+<!-- Sélection de l'animal --> <!--------------------------------
               <div class="mb-3">
                 <label for="animal_id" class="form-label">Sélectionnez l'habitat :</label>
                 <select name="habitat_id" id="habitat_id" class="form-control" required>
@@ -294,8 +345,8 @@ $selected_animal_id = $_GET['animal_id'] ?? '';
                   <!?php endforeach; ?>
                 </select>
               </div> --------------------------------->
-              
-              <!-- ID du vétérinaire (à remplacer par celui de l'utilisateur connecté) -->  <!-----------------------
+
+<!-- ID du vétérinaire (à remplacer par celui de l'utilisateur connecté) --> <!-----------------------
               <input type="hidden" name="veterinaire_id" value="3">
               
               <div class="mb-3">
@@ -316,7 +367,7 @@ $selected_animal_id = $_GET['animal_id'] ?? '';
     </div>
   </div>
   ------------------------->
-  <!-- Bootstrap JS Bundle -->  <!--------------------------------
+<!-- Bootstrap JS Bundle --> <!--------------------------------
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>  --------------------------->
@@ -385,7 +436,7 @@ $rapports = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ajout et Historique des Comptes-Rendus</title> -->
-  <!-- Bootstrap CSS --> <!--
+<!-- Bootstrap CSS --> <!--
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
@@ -403,7 +454,7 @@ $rapports = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <div class="alert alert-success"><!?= htmlspecialchars($success_message) ?></div>
   <!?php endif; ?>
   <form method="post" class="mb-5"> -->
-    <!-- Sélection de l'animal --> <!--
+<!-- Sélection de l'animal --> <!--
     <div class="mb-3">
       <label for="animal_id" class="form-label">Sélectionnez l'animal :</label>
       <select name="animal_id" id="animal_id" class="form-control" required>
@@ -415,7 +466,7 @@ $rapports = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <!?php endforeach; ?>
       </select>
     </div> -->
-    <!-- ID du vétérinaire (fixé à 3 pour cet exemple) --> <!--
+<!-- ID du vétérinaire (fixé à 3 pour cet exemple) --> <!--
     <input type="hidden" name="veterinaire_id" value="3">
     
     <div class="mb-3">
@@ -469,7 +520,7 @@ $rapports = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </tbody>
   </table>
 </div> -->
-<!-- Bootstrap JS Bundle -->   <!--
+<!-- Bootstrap JS Bundle --> <!--
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
 </body>
 </html> -->
@@ -588,7 +639,7 @@ $animal_id = $_GET['animal_id'] ?? '';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ajout Compte-Rendu</title> -->
-  <!-- Bootstrap CSS --> <!--
+<!-- Bootstrap CSS --> <!--
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
@@ -608,7 +659,7 @@ $animal_id = $_GET['animal_id'] ?? '';
             <form method="post">
               <input type="hidden" name="animal_id" value="<!?= htmlspecialchars($animal_id) ?>">
               <input type="hidden" name="veterinaire_id" value="1"> --> <!-- Remplacer par l'ID du vétérinaire connecté -->
-              <!--
+<!--
               <div class="mb-3">
                 <label for="etat_animal" class="form-label">État de l'Animal :</label>
                 <input type="text" class="form-control" id="etat_animal" name="etat_animal" required>
@@ -636,8 +687,8 @@ $animal_id = $_GET['animal_id'] ?? '';
       </div>
     </div>
   </div> -->
-  
-  <!-- Bootstrap JS Bundle -->   <!--
+
+<!-- Bootstrap JS Bundle --> <!--
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
@@ -683,7 +734,7 @@ $animal_id = $_GET['animal_id'] ?? '';
     <form method="post">
         <input type="hidden" name="animal_id" value="<!?= $animal_id ?>">
         <input type="hidden" name="veterinaire_id" value="1"> --> <!-- Remplacer par l'ID du vétérinaire connecté -->
-      <!--  <label>État de l'Animal :</label>
+<!--  <label>État de l'Animal :</label>
         <input type="text" name="etat_animal" required><br>
 
         <label>Nourriture Proposée :</label>
@@ -704,7 +755,7 @@ $animal_id = $_GET['animal_id'] ?? '';
 </html>
   -->
 
-  <!--  $nourriture_proposee = $_POST['nourriture_proposee']; 
+<!--  $nourriture_proposee = $_POST['nourriture_proposee']; 
   
   -->
 

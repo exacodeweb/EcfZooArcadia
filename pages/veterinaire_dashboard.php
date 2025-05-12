@@ -124,7 +124,7 @@ if (!$user) {
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="./modifier-mot-de-passe.php">Modifier Mot de Passe</a></li>
+          <!--<li class="nav-item"><a class="nav-link" href="../pages/modifier-mot-de-passe.php">Modifier Mot de Passe</a></li>-->
 
           <!--<li class="nav-item"><a class="nav-link" href="../avis_system_test/moderation-avis.php">Modérer Avis</a></li>-->
           <li class="nav-item"><a class="nav-link btn btn-danger text-white" href="./logout.php">Déconnexion</a></li><!-- ../config/logout.php --><!-- ../service_veterinaire/logout.php -->
@@ -154,7 +154,8 @@ if (!$user) {
                   <div class="card-body text-center">
                     <a href="../service_veterinaire/ajouter_compte_rendu.php" class="btn btn-primary w-100 mb-3">Ajouter un compte rendu</a><!-- Ajouter un compte rendu -->
                     <a href="../service_veterinaire/historique_comptes_rendus.php" class="btn btn-secondary w-100 mb-3">Historique compte rendu</a><!-- Historique compte rendu -->
-                    <a href="#../service_veterinaire/avis_habitat.php" class="btn btn-success w-100 mb-3">Ajouter un commentaire habitat</a>
+                    <a href="../service_employe/liste_consommation.php" class="btn btn-success w-100 mb-3">Historique des consommations</a>
+                    <a href="../service_veterinaire/ajouter_avis_habitat.php" class="btn btn-success w-100 mb-3">Ajouter un commentaire habitat</a>
                     <a href="../service_veterinaire/logout.php" class="btn btn-danger w-100">Déconnexion</a><!--  -->
                   </div><!--  -->
                 </div>

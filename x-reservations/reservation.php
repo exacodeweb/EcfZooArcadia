@@ -175,10 +175,6 @@ select:focus {
 
 
 
-
-
-
-
 <!--?php
 // Connexion à la base de données
 $pdo = new PDO('mysql:host=db;dbname=zoo_arcadia;charset=utf8mb4', 'utilisateur_zoo', 'Z00_Arcadia!2024');
@@ -193,106 +189,6 @@ $typesVisite = $pdo->query("SELECT * FROM types_visite")->fetchAll(PDO::FETCH_AS
 <head>
   <meta charset="UTF-8">
   <title>Réserver une visite - Zoo Arcadia</title>
-
-  <style>
-  /* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f2f6fa;
-  color: #333;
-  display: flex;
-  justify-content: center;
-  padding: 40px 20px;
-}
-
-/* Container */
-.form-container {
-  background-color: white;
-  padding: 30px;
-  border-radius: 12px;
-  max-width: 600px;
-  width: 100%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 25px;
-  color: #2a6f97;
-}
-
-/* Form */
-.form-zoo {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-input,
-select {
-  padding: 10px 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  transition: border-color 0.3s ease;
-}
-
-input:focus,
-select:focus {
-  border-color: #2a6f97;
-  outline: none;
-}
-
-/* Button */
-.btn-submit {
-  background-color: #2a6f97;
-  color: white;
-  font-size: 16px;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-submit:hover {
-  background-color: #1e567a;
-}
-
-/* Responsive */
-@media (max-width: 500px) {
-  h1 {
-    font-size: 22px;
-  }
-
-  .btn-submit {
-    font-size: 15px;
-    padding: 10px;
-  }
-
-  input,
-  select {
-    font-size: 14px;
-  }
-}
-</style>
 </head>
 <body>
   <h1>Réservation de billets</h1>
