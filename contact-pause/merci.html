@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merci !</title>
+    <script>
+        setTimeout(function(){
+            window.location.href = "../index.php"; // Redirection après 3 secondes
+        }, 3000);
+    </script>
+    <style>
+        body { 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        h2 {
+            color: #007bff;
+            font-size: 2em;
+        }
+        p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Merci !</h2>
+        <p>Votre message a été envoyé avec succès.</p>
+        <p>Vous allez être redirigé vers l'accueil...</p>
+    </div>
+</body>
+</html>
+

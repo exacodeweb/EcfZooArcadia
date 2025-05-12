@@ -49,140 +49,9 @@
       line-height: 1.6;
 
     }*/
+    </style>
 
-    /* En-tête */
-    header {
-      background-color: #2a7e50;
-      color: white;
-      padding: 10px 20px;
-      /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
-    }
-
-    /* Alignement du logo et du bouton hamburger */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 8px 0px;
-      /*10px 20px*/
-      background-color: #2A7E50;
-      /*#333*/
-      color: white;
-      /*whhite*/
-    }
-
-    /* Logo */
-    .logo {
-      height: 90px;
-      /* Ajustez la taille selon votre logo */
-      border-radius: 4px;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      cursor: pointer;
-      /* Masquer par défaut sur les grands écrans */
-    }
-
-    /* Styles globaux */
-    .nav-links {
-      display: flex;
-      gap: 10px;
-      list-style: none;
-      margin: 0px;
-      padding: 0px;
-      /*transition: transform 0.3s ease;*/
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: white;
-      padding: 8px 15px;
-      border-radius: 5px;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .nav-links a:hover {
-      background-color: #f2a007;
-      color: white;
-      /*#F2A007*/
-    }
-
-    /* Bouton de réservation */
-    .cta-btn {
-      background-color: #F3EDE0;
-      color: #2A7E50;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta-btn:hover {
-      background-color: #F3EDE0;
-      color: #fff;
-    }
-
-    /* Navigation responsive */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-        cursor: pointer;
-        font-size: 24px;
-        color: white;
-      }
-
-      /*------------------*/
-      .nav-links {
-        /*position: absolute;*/
-        background-color: #2A7E50;
-        /*width: 100%;*/
-        /*top: 70px;*/
-        left: 0;
-      }
-
-      .nav-links li {
-        margin: 0.5rem 0;
-        /*0.5rem*/
-      }
-
-      /*------------------*/
-
-      .nav-links.show {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-links {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-      }
-    }
-
-    /* Navigation responsive */
-    @media (max-width: 768px) {
-      .nav-links {
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.8);
-        /*background-color: #2A7E50;*/
-        position: absolute;
-        top: 107px;
-        /*70px*/
-        /* Ajustez selon la hauteur du header */
-        right: 0;
-        width: 100%;
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-      }
-    }
-
+    <style>
     /*==========================*/
     /* Section Hero Section */
     /*==========================*/
@@ -306,7 +175,7 @@
     /*Habitats Section Habitats*/
     /*==========================*/
     #habitats {
-      padding: 2rem;
+      padding: 1rem;/*2rem*/
       text-align: center;
       background: #F3EDE0;
     }
@@ -382,7 +251,7 @@
       }
     }
 
-    /* Gestion spécifique pour les très petits écrans (307px) */
+    /* Gestion spécifique pour les très petits écrans (307px) mobile*/
     @media (max-width: 400px) {
 
       .habitat-card,
@@ -412,7 +281,7 @@
     /*==========================*/
 
     #services {
-      padding: 2rem;
+      /*padding: 1rem;/*2rem*/  /*pour espacé les cards*/
       background: #F3EDE0;
       text-align: center;
     }
@@ -425,7 +294,7 @@
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      gap: 1rem;/*1.5rem*/
     }
 
     .service-card {
@@ -444,7 +313,7 @@
     }
 
     .service-card img {
-      width: 100%;
+      width: 100%;/*100%*/
       height: 150px;
       object-fit: cover;
     }
@@ -496,7 +365,7 @@
       background: #F3EDE0;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 300px;
+      width: 300px;/*300px*/
       padding: 1rem;
       transition: transform 0.3s, box-shadow 0.3s;
     }
@@ -593,7 +462,7 @@
       }
 
       .habitat {
-        width: 90%;
+        width: 90%;/*90%*/
       }
     }
 
@@ -603,9 +472,10 @@
       }
 
       .habitat {
-        width: 45%;
+        width: 45%;/*45%*/
       }
     }
+
   </style>
 </head>
 
@@ -635,26 +505,16 @@
   </section>
 
   <br>
-  <!-- Section Habitat -->
+ 
+
+  <!--// Connexion à la base de données //configuration centralisé -->
   <?php
-  //include 'includes/db-connection.php';
   require_once './config/config_unv.php';
-  //require_once './config/database.php';
+  ?>
 
-  //----------------------------------------------------
-  //$config = require 'config/config.php';
-
-  //$pdo = new PDO(
-      //"mysql:host={$config['db']['host']};dbname={$config['db']['dbname']};charset={$config['db']['charset']}",
-      //$config['db']['username'],
-      //$config['db']['password'],
-      //[
-          //PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-          //PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-      //]
-  //);
-  //----------------------------------------------------
-
+<!--------------------<<-------------------------------------------------------------------------------->
+<!-- Section Habitat -->
+<!--?php
   // Récupérer tous les habitats
   $sql = "SELECT id, nom, description, JSON_UNQUOTE(JSON_EXTRACT(images, '$[0]')) AS image FROM habitats";
   $stmt = $pdo->query($sql);
@@ -663,40 +523,94 @@
   <section id="habitats">
     <h2>Plongez dans nos mondes naturels</h2>
     <div class="habitat-cards">
-      <?php while ($habitat = $stmt->fetch()): ?>
+      <!?php while ($habitat = $stmt->fetch()): ?>
         <div class="card">
 
-        <a href="./liste-habitats.php?id=<?= htmlspecialchars($habitat['id']) ?>">
-          <img src="assets/images/<?= htmlspecialchars($habitat['image']) ?>" alt="<?= htmlspecialchars($habitat['nom']) ?>">
-        </a>
-
-          <!--<a href="manage_animaux/details-habita.php?id=<!?= htmlspecialchars($habitat['id']) ?>">
+        <a href="./liste-habitats.php?id=<!?= htmlspecialchars($habitat['id']) ?>">
           <img src="assets/images/<!?= htmlspecialchars($habitat['image']) ?>" alt="<!?= htmlspecialchars($habitat['nom']) ?>">
-          </a>-->
+        </a>
+          <h3><!?= htmlspecialchars($habitat['nom']) ?></h3>
+          <p><!?= htmlspecialchars($habitat['description']) ?></p>
+        </div>
+      <!?php endwhile; ?>
+    </div>
 
+    <button onclick="window.location.href='./liste-habitats.php'" class="btn btn-secondary mt-3">Voir les Habitats</button><!-- Découvrir les habitats -->
+        <!--
+  </section> -->
+  <!---------------------<<----------------------------------------------------------------------------->
+
+
+  <!---------------------------------------------------------------------------------------------------->
+  <!--?php
+    // Récupérer tous les services
+    $sql = "SELECT id, nom, description, JSON_UNQUOTE(JSON_EXTRACT(images, '$[0]')) AS image FROM services";
+    $stmt = $pdo->query($sql);
+  ?>
+
+  <section id="habitats">
+    <h2>Explorez, Voyagez, Savourez !</h2>
+    <div class="habitat-cards">
+      <!-?php while ($service = $stmt->fetch()): ?>
+        <div class="card">
+        <a href="services.php?id=<!?= htmlspecialchars($service['id']) ?>">
+          <img src="assets/services/<!?= htmlspecialchars($service['image']) ?>" alt="<!?= htmlspecialchars($service['nom']) ?>">
+        </a>
+          <h3><!?= htmlspecialchars($service['nom']) ?></h3>
+          <p><!?= htmlspecialchars($service['description']) ?></p>
+        </div>
+      <!?php endwhile; ?>
+    </div>
+
+    <button onclick="window.location.href='./services.php'" class="btn btn-secondary mt-3">Voir les Services</button><!-- Découvrir les habitats -->
+        <!--
+  </section> -->
+  <!---------------------------------------------------------------------------------------------------->
+
+
+
+
+  <!---------------------------------------------------------------------------------------------------->
+  <!-- Section Habitats -->  
+  <?php
+ 
+  // Récupérer tous les habitats
+  $sql = "SELECT id, nom, description, JSON_UNQUOTE(JSON_EXTRACT(images, '$[0]')) AS image FROM habitats";
+  $stmt = $pdo->query($sql);
+  ?>
+
+  <section id="habitats">
+    <h2>Plongez dans nos mondes naturels</h2><!-- Plongez dans nos mondes naturels -->
+    <div class="habitat-cards">
+      <?php while ($habitat = $stmt->fetch()): ?>
+        <div class="card">
+        <a href="./liste-habitats.php?id=<?= htmlspecialchars($habitat['id']) ?>">
+          <img src="./assets/images/<?= htmlspecialchars($habitat['image']) ?>" alt="<?= htmlspecialchars($habitat['nom']) ?>">
+        </a>
           <h3><?= htmlspecialchars($habitat['nom']) ?></h3>
-
           <p><?= htmlspecialchars($habitat['description']) ?></p>
         </div>
       <?php endwhile; ?>
     </div>
-    <button onclick="window.location.href='./liste-habitats.php'" class="btn btn-secondary mt-3">Voir les Habitats</button><!-- Découvrir les habitats -->
-  </section>
 
+    <button onclick="window.location.href='./liste-habitats.php'" class="btn btn-secondary mt-3">Voir les Habitats</button>
+
+  </section>
+  <!---------------------------------------------------------------------------------------------------->
+
+
+
+
+  <!---------------------------------------------------------------------------------------------------->
   <!-- Section Service -->
   <?php
-  //include './includes/db-connection.php'; pause celui-ce etait utilisé
-  //require_once __DIR__ . "/config/db-connection.php";
-  //require './config/database.php';
-  //require_once './config/config-test.php';
-
   // Récupérer tous les services
   $sql = "SELECT id, nom, description, JSON_UNQUOTE(JSON_EXTRACT(images, '$[0]')) AS image FROM services";
   $stmt = $pdo->query($sql);
   ?>
 
   <section id="services">
-    <h2>Plongez dans nos mondes naturels</h2>
+    <h2>Explorez, Voyagez, Savourez !</h2><!-- Plongez dans nos mondes naturels -->
     <div class="habitat-cards">
       <?php while ($service = $stmt->fetch()): ?>
         <div class="card">
@@ -715,6 +629,7 @@
     <button onclick="window.location.href='./services.php'" class="btn btn-secondary mt-3">Voir les services</button>
 
   </section>
+  <!---------------------------------------------------------------------------------------------------->
 
   <!-- Section avis -->
   <br>
@@ -731,7 +646,7 @@
     
     <!--<button onclick="window.location.href='soumettre-avis.html'" class="btn btn-secondary mt-3">Laisser un avis</button>-->
 
-    <button onclick="window.location.href='./avis_system_test/soumetre-avis.html'" class="btn btn-secondary mt-3">Laisser un avis</button>
+    <button onclick="window.location.href='./avis_system_test/formulaire-avis.php'" class="btn btn-secondary mt-3">Laisser un avis</button>
 
     <!--<button onclick="window.location.href='./views/soumetre-avis.html'" class="btn btn-secondary mt-3">Laisser un avis</button>-->
 
@@ -963,168 +878,6 @@
       });
     });
   </script>
-
-  <style>
-    /*-- A retiré test --*/
-    /* Responsive Design */
-    @media (max-width: 768px) {
-
-      /* Taille du texte réduite pour les petits écrans */
-      #presentation h1 {
-        font-size: 2rem;
-      }
-
-      #presentation p,
-      section h2 {
-        font-size: 1.5rem;
-      }
-
-      /* Ajustement des grilles d'images */
-      .images-presentation img,
-      .animal-grid img {
-        max-width: 120px;
-      }
-    }
-
-    @media (max-width: 576px) {
-
-      .images-presentation img,
-      .animal-grid img {
-        max-width: 100px;
-      }
-
-      /* Ajustement de la taille des sections de texte */
-      #presentation h1 {
-        font-size: 1.5rem;
-      }
-
-      #presentation p,
-      section h2 {
-        font-size: 1.2rem;
-      }
-    }
-
-    /* Flexbox pour aligner les images et sections de présentation */
-    .images-presentation,
-    .animal-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      text-align: center;
-    }
-
-    /* Suppression de l'espace par défaut autour de la page */
-    .container-fluid {
-      padding: 0 !important;
-    }
-
-    /* Style des images de la grille pour qu'elles s'ajustent bien sur mobile */
-    .animal-grid img {
-      width: 100%;
-      max-width: 150px;
-      margin: 5px;
-    }
-
-    @media (max-width: 576px) {
-
-      /* Ajustement des images de présentation */
-      .images-presentation img {
-        width: 100%;
-        max-width: 120px;
-        margin: 5px;
-      }
-
-      /* Ajustement du texte dans les sections */
-      h1,
-      h2 {
-        font-size: 1.5em;
-      }
-    }
-  </style>
-
-  <style>
-    /* Footer styles */
-    footer {
-      /*background-color: #2b2b2b;*/
-      background: #2c3e50;
-      color: white;
-      padding: 20px 10px;
-      font-size: 14px;
-      /*-- Ajouter Test --*/
-
-      max-height: 100%;
-      height: 100%;
-    }
-
-    .footer-container {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      /* Pour s'assurer que le contenu se réorganise sur petits écrans */
-      gap: 20px; /*espacement 20px*/
-      padding: 10px 20px;
-      /*-- Ajouter Test --*/
-      font-size: 14px;
-      /*-- Ajouter Test --*/
-    }
-
-    .footer-section {
-      flex: 1;
-      /* Chaque section prend une proportion égale de l'espace */
-      min-width: 200px;
-      /* Largeur minimale pour éviter que les sections soient trop étroites */
-      padding-left: 20px;
-      /*-- Ajouter Test --*/
-    }
-
-    .footer-section h4 {
-      font-size: 1.2rem;
-      margin-top: 0px;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      text-align: left;
-      /*-- Ajouter Test --*/
-
-      font-weight: 500;
-    }
-
-    .footer-section ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: left;
-      /*-- Ajouter Test --*/
-    }
-
-    .footer-section ul li {
-      margin-bottom: 10px;
-    }
-
-    .footer-section ul li a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .footer-section ul li a:hover {
-      color: #f2a007;
-      /* Couleur au survol */
-    }
-
-    /*.text-center {
-      padding: 24px 10px;
-    }*/
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .footer-container {
-        flex-direction: column;
-        /* Les sections passent en colonne sur petit écran */
-        align-items: center;
-        text-align: center;
-      }
-    }
-  </style>
 
   <!-- Footer -->
   <section class="footer">

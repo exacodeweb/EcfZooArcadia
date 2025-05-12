@@ -243,7 +243,7 @@
         <li><a href="<?= dirname($_SERVER['SCRIPT_NAME']) ?>../index.php#services">Services</a></li>
         <!--<li><a href="about">À propos</a></li>--><!-- # -->
         <li><a href="<?= dirname($_SERVER['SCRIPT_NAME']) ?>../index.php#about">À propos</a></li>
-        <li><a href="./pubt/contact.html">Contact</a></li><!-- #contact -->
+        <li><a href="../contact/fom_contact.php">Contact</a></li><!-- #contact #./pubt/contact.html-->
 
         <!-- Lien pour l'accès administrateur -->
         <!--<div class="Navbar__Link">
@@ -257,7 +257,7 @@
 
         <!--<li><a href="./public/login.php">Connexion</a></li> version fonctionnel -->
         <li><a href="./public/login-2.php">Connexion</a></li><!-- version sécurisé -->
-        <li><a href="#reservation" class="cta-btn">Réserver</a></li>
+        <li><a href="../reservations/reservation.php" class="cta-btn">Réserver</a></li><!-- #reservation -->
       </ul>
     </nav>
   </header>

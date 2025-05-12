@@ -61,7 +61,8 @@
       line-height: 1.2;
       /*color: #ffff;*/
 
-      /*font-weight: 500;*/ /*desactivé */
+      /*font-weight: 500;*/
+      /*desactivé */
     }
 
 
@@ -146,21 +147,21 @@
   </style>
 
   <style>
-      /*-- FIL D'ARIANE --*/
-      .breadcrumb-item {
-        width: 100%;
-        background: none;
-        margin-left: 0px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        /*rajouter en option*/
-        display: block;
-        flex-direction: row;
-        align-content: center;
-        align-items: center;
-        padding: 5px;
-      }
-    </style>
+    /*-- FIL D'ARIANE --*/
+    .breadcrumb-item {
+      width: 100%;
+      background: none;
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      /*rajouter en option*/
+      display: block;
+      flex-direction: row;
+      align-content: center;
+      align-items: center;
+      padding: 5px;
+    }
+  </style>
 
 </head>
 
@@ -169,38 +170,40 @@
   <?php include './includes/header.php'; ?>
 
   <?php
-  include './includes/db-connection.php';
+  require_once 'config/config_unv.php'; // Connexion à la base de données
 
-  // Récupérer tous les habitats
-  $sql = "SELECT id, nom, JSON_UNQUOTE(JSON_EXTRACT(images, '$[0]')) AS image FROM services";
-  $stmt = $pdo->query($sql);
+  try {
+    // Récupérer tous les services avec l'image principale
+    $sql = "SELECT id, nom, JSON_UNQUOTE(JSON_EXTRACT(images, '$[0]')) AS image FROM services";
+    $stmt = $pdo->query($sql);
+    $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  } catch (PDOException $e) {
+    die("Erreur lors de la récupération des services : " . $e->getMessage());
+  }
   ?>
 
   <!-- Fil d'ariane -->
   <div class="breadcrumb-item">
-    <!--VOUS ÊTES ICI:-->
-    <!--<a href="../acceuil.html" id="link-rep">Acceuil</a> > Contact-->
-    <!--<a href="./Sommaire-index.html" class="link-rep">Sommaire</a> >-->
     <a href="./index.php" class="link-rep">Accueil</a> > Les Services
   </div>
 
-  <div class="habitats-list"></div>
   <h1>Liste des Services</h1>
 
-  <div class="habitats-list">
-    <?php while ($service = $stmt->fetch()): ?>
-      <div class="habitat">
-
-      <a href="details-services.php?id=<?= htmlspecialchars($service['id']) ?>">
-        <img src="./assets/services/<?= htmlspecialchars($service['image']) ?>" alt="<?= htmlspecialchars($service['nom']) ?>">
-      </a>
-        
-        <h3><?= htmlspecialchars($service['nom']) ?></h3>
-        <a href="./details-services.php?id=<?= $service['id'] ?>" class="btn-details">Voir détails</a>
-
-        <!--<a href="manage_animaux/details-habitat.php?id=<!?= $habitat['id'] ?>" class="btn-details">Voir détails</a>-->
-      </div>
-    <?php endwhile; ?>
+  <div class="habitats-list"><!-- services-list -->
+    <?php if (!empty($services)): ?>
+      <?php foreach ($services as $service): ?>
+        <div class="habitat"><!-- service-card -->
+          <a href="details-services.php?id=<?= htmlspecialchars($service['id']) ?>">
+            <img src="./assets/services/<?= htmlspecialchars($service['image']) ?>"
+              alt="<?= htmlspecialchars($service['nom']) ?>" class="service-img">
+          </a>
+          <h3><?= htmlspecialchars($service['nom']) ?></h3>
+          <a href="details-services.php?id=<?= htmlspecialchars($service['id']) ?>" class="btn-details">Voir détails</a>
+        </div>
+      <?php endforeach; ?>
+    <?php else: ?>
+      <p>Aucun service disponible.</p>
+    <?php endif; ?>
   </div>
 
   </section>
@@ -226,3 +229,44 @@
 
 </html>
 
+
+
+
+
+
+
+
+<!--?php
+  include './includes/db-connection.php';
+
+  // Récupérer tous les habitats
+  $sql = "SELECT id, nom, JSON_UNQUOTE(JSON_EXTRACT(images, '$[0]')) AS image FROM services";
+  $stmt = $pdo->query($sql);
+  ?>  ------------>
+
+  <!-- Fil d'ariane -->  <!-------------------
+  <div class="breadcrumb-item"> --------------->
+    <!--VOUS ÊTES ICI:-->
+    <!--<a href="../acceuil.html" id="link-rep">Acceuil</a> > Contact-->
+    <!--<a href="./Sommaire-index.html" class="link-rep">Sommaire</a> >--> <!---------------------
+    <a href="./index.php" class="link-rep">Accueil</a> > Les Services
+  </div>
+
+  <div class="habitats-list"></div>
+  <h1>Liste des Services</h1>
+
+  <div class="habitats-list">
+    <!?php while ($service = $stmt->fetch()): ?>
+      <div class="habitat">
+
+      <a href="details-services.php?id=<!?= htmlspecialchars($service['id']) ?>">
+        <img src="./assets/services/<!?= htmlspecialchars($service['image']) ?>" alt="<!?= htmlspecialchars($service['nom']) ?>">
+      </a>
+        
+        <h3><!?= htmlspecialchars($service['nom']) ?></h3>
+        <a href="./details-services.php?id=<!?= $service['id'] ?>" class="btn-details">Voir détails</a>  --------------->
+
+        <!--<a href="manage_animaux/details-habitat.php?id=<!?= $habitat['id'] ?>" class="btn-details">Voir détails</a>-->
+      <!-------------</div>
+    <!?php endwhile; ?>
+  </div>  ------------------>

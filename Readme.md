@@ -53,11 +53,11 @@ Serveur : ecfzooarcadia_v.1.0.0_mysql
 
 Utilisateur : utilisateur_zoo
 
-Mot de passe : Z00_Arcadia!2024
+Mot de passe : Z00_Arcadia!2024  (!la touche Z plus zéro du clavier numérique)
 
 Sélectionner la base zoo_arcadia
 
-Importer le fichier zoo_arcadia.sql
+Importer le fichier backup/zoo_arcadia.sql
 
 ### 🔑 Connexion aux comptes utilisateurs
 
@@ -102,3 +102,15 @@ Gestion via Docker Compose
 📢 Auteur
 
 Projet réalisé par [Giet Franck].
+
+## Contribuer
+
+📌 Contributions
+Le projet Zoo-Arcadia est un travail collaboratif. Si vous souhaitez contribuer, veuillez suivre les étapes ci-dessous pour assurer une gestion harmonieuse du projet.
+Si vous souhaitez contribuer à ce projet, voici les étapes à suivre :
+
+1. Forkez ce dépôt.
+2. Créez une branche pour votre fonctionnalité (`git checkout -b feature/nom-fonctionnalité`).
+3. Commitez vos changements (`git commit -am 'Ajout de nouvelle fonctionnalité'`).
+4. Poussez votre branche (`git push origin feature/nom-fonctionnalité`).
+5. Soumettez une pull request pour que vos changements soient révisés et intégrés.

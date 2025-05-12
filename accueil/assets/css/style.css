@@ -1,0 +1,176 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.habitats, .animals {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.habitat-card, .animal-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+}
+
+.habitat-card img, .animal-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.veterinary-report {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+.habitats-list, .animals-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.habitat, .animal {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+
+
+
+
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+/* Habitat Details Section */
+.habitat-details {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.habitat-details p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Images Section */
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.images img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+}
+
+/* Animal List Section */
+.animal-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.animal-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 200px;
+  text-align: center;
+  padding: 15px;
+}
+
+.animal-card img {
+  width: 100%;
+  border-radius: 8px;
+  height: auto;
+  max-height: 150px;
+}
+
+.animal-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #2c3e50;
+}
+
+.animal-card .btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.animal-card .btn:hover {
+  background: #2980b9;
+}
+
+/* Error Message */
+.error {
+  text-align: center;
+  color: #e74c3c;
+  font-size: 18px;
+}

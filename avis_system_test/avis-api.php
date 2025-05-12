@@ -1,5 +1,5 @@
 <?php
-die('Fichier chargé avec succès');
+// die('Fichier chargé avec succès');
 // Vérification et inclusion du fichier de configuration
 if (!file_exists('../config/config.php')) {//../config/config.php
     http_response_code(500);
@@ -44,7 +44,7 @@ error_reporting(E_ALL);
 ?>
 
 
-
+<!-- ✅ Oui, ce code PHP est conçu pour être une API REST (GET), même s’il y a une petite interruption en haut qui empêche son exécution complète. -->
 
 
 

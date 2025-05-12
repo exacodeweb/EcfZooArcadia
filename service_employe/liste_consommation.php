@@ -26,7 +26,7 @@ $consommations = $pdo->query("
         <h2 class="text-center text-primary mb-4">Historique des consommations alimentaires</h2>
         
         <div class="d-flex justify-content-between mb-3">
-            <a href="../pages/employe_dashboard.php" class="btn btn-secondary">⬅ Retour</a>
+            <a href="../pages/veterinaire_dashboard.php" class="btn btn-secondary">⬅ Retour</a>
             <a href="ajouter_consommation.php" class="btn btn-success">+ Ajouter une consommation</a>
         </div>
 

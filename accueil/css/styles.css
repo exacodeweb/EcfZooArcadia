@@ -1,0 +1,487 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header, footer {
+  background: #222;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+.habitat-card {
+  border: 1px solid #ccc;
+  padding: 1em;
+  margin: 1em;
+}
+
+
+/* Section Hero Section */
+h1 {
+font-size: clamp(24px, 5vw, 48px) !important;
+text-align: center !important;
+margin: 1rem 0;
+line-height: 1.2;
+}
+
+#hero {
+background: url('../assets/images/image-resize-(7).jpg') no-repeat center center/cover;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+color: #fff;
+padding: 0 1rem;
+}
+
+.hero-content h1 {
+font-size: 3rem;
+margin-bottom: 1rem;
+}
+
+.hero-content p {
+font-size: 1.2rem;
+margin-bottom: 2rem;
+}
+
+.hero-buttons .btn {
+margin: 0 0.5rem;
+background: #F3EDE0;
+color: #2A7E50;
+padding: 0.8rem 1.2rem;
+text-decoration: none;
+font-weight: bold;
+border-radius: 5px;
+transition: background-color 0.3s ease;
+}
+
+.hero-buttons .btn:hover {
+background: #805D3A;
+color: #fff;
+}
+
+.hero-content {
+background: rgba(0, 0, 0, 0.5);
+/* Fond semi-transparent */
+padding: clamp(10px, 5vw, 20px);
+/* Min 10px, Max 20px, flexible */
+border-radius: 10px;
+/* Coins arrondis */
+max-width: 90%;
+/* Empêche un débordement horizontal */
+margin: 0 auto;
+/* Centre sur l'écran */
+color: #fff;
+/* Texte lisible sur fond sombre */
+}
+
+/* Pour les plus petits écrans */
+@media (max-width: 400px) {
+h1 {
+  font-size: 20px !important;
+  /* Réduction spécifique si besoin */
+}
+}
+
+/* Ajustement pour les très petits écrans */
+@media (max-width: 400px) {
+.hero-content {
+  padding: 10px;
+  /* Réduction des marges */
+  border-radius: 5px;
+  /* Coins moins arrondis */
+  font-size: 14px;
+  /* Réduction de la taille du texte si nécessaire */
+}
+}
+
+/* Section À propos */
+#about {
+padding: 2rem;
+text-align: center;
+background: #fff;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+#about h2 {
+margin-bottom: 1rem;
+color: #2A7E50;
+}
+
+#about .about-image {
+margin-top: 1rem;
+width: 100%;
+max-width: 600px;
+border-radius: 10px;
+}
+
+/* Ajustements pour les petits écrans */
+@media (max-width: 768px) {
+
+#about {
+  flex: 1 1 100%;
+  /* Chaque carte prend toute la largeur */
+  padding: 0px;
+}
+}
+
+/*-- disposition presentation des cartes-images --*/
+#habitats {
+  padding: 1rem;/*2rem*/
+  text-align: center;
+  background: #F3EDE0;
+}
+
+#habitats h2 {
+  margin-bottom: 2rem;
+  color: #2A7E50;
+}
+
+.habitat-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/*-- carte images ? --*/
+.card {
+background: #fff;
+border-radius: 10px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+padding: 1rem;
+width: 30%;
+max-width: 300px;
+text-align: center;
+}
+
+.card img {
+width: 100%;
+border-radius: 10px;
+margin-bottom: 1rem;
+}
+
+.card h3 {
+color: #2A7E50;
+}
+
+
+/* Mise à jour */
+/* Uniformisation des images */
+.habitat-cards img,
+.service-card img {
+height: 200px;
+object-fit: cover;
+width: 100%;
+}
+
+.card {
+background: #fff;
+border-radius: 10px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+overflow: hidden;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+transform: scale(1.05);
+box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustements pour les petits écrans */
+@media (max-width: 768px) {
+
+.habitat-card,
+.service-card {
+  flex: 1 1 100%;
+  /* Chaque carte prend toute la largeur */
+}
+
+#habitats,
+#services {
+  padding: 0 0.5rem;
+  /* Réduction des marges pour petits écrans */
+}
+}
+
+/* Gestion spécifique pour les très petits écrans (307px) */
+@media (max-width: 400px) {
+
+.habitat-card,
+.service-card {
+  padding: 0.5rem;
+}
+
+.habitat-card img,
+.service-card img {
+  height: 150px;
+  /* Réduction de la hauteur pour s'adapter */
+}
+}
+
+.mt-3 {
+margin-top: 15px;
+}
+
+/* section service */
+#services {
+  padding: 1rem;/*2rem*/
+  background: #F3EDE0;
+  text-align: center;
+}
+
+#services h2 {
+  margin-bottom: 1.5rem;
+  color: #2A7E50;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%;
+  /* Largeur ajustée à la largeur des cards dans la section habitats 30% */
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img {
+  width: 100%;/*100%*/
+  height: 150px;
+  object-fit: cover;
+}
+
+.service-card h3 {
+  margin: 1rem 0;
+  color: #2A7E50;
+}
+
+.service-card p {
+  padding: 0 1rem 1rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/*-- Section Actualités */
+#news {
+  padding: 2rem;
+  background: #fff;
+  text-align: center;
+}
+
+#news h2 {
+  margin-bottom: 1.5rem;
+  color: #2A7E50;
+}
+
+/*------------------------*/
+.h2 {
+  color: #ffffff !important;
+
+  margin-bottom: 8px;
+}
+/*------------------------*/
+
+.news-cards {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.news-card {
+  background: #F3EDE0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;/*300px*/
+  padding: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+/*
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.news-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.news-card,
+.eco-content img {
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.3s;
+}
+
+.news-card:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+/* Section Engagement écologique */
+#eco {
+  padding: 2rem;
+  background: #2A7E50;
+  color: #fff;
+  text-align: center;
+}
+
+#eco h2 {
+  margin-bottom: 1.5rem;
+}
+
+.eco-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.eco-content img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.eco-content img {
+  animation-delay: 0.7s;
+}
+
+
+
+
+
+
+
+/*<!-- PERMET DE FAIRE DEFILE LE CAROUSEL AVIS --->
+<!-- pour centrée le carousel -->*/
+
+  #avis {
+    padding: 20px;
+    background-color: #f9f9f9;
+    background-color: #2A7E50;
+    text-align: center;
+  }
+
+  .avis-scroll-container {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 20px;
+  }
+
+  .avis-container {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  .avis {
+    min-width: 300px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .avis p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .avis cite {
+    /*display: block;
+    margin-top: 10px;*/
+    font-style: italic;
+    /*color: #555;*/
+  }
+
+  /*-----*/
+  #avis {
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+  }
+
+  .avis-scroll-container {
+    overflow: hidden;
+    /* Masquer la scroll-bar */
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
+  }
+
+  .avis-container {
+    display: inline-flex;
+    gap: 20px;
+  }
+
+  .avis {
+    flex: 0 0 300px;
+    /* Largeur fixe de 300px */
+    max-width: 300px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    /*#ddd*/
+    border-radius: 8px;
+    background: #f9f9f9;
+    text-align: center;
+    /*left*/
+    box-sizing: border-box;
+  }
+
+  .avis p {
+    font-style: italic;
+  }
+
+  .avis cite {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+  }
+
+
+/*<!-- style pour les bouton laisser un avis "en cours de dévelop" -->*/
+
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #0056b3;
+  }
+
+  .btn-primary {
+    background-color: #28a745;
+  }
+
+  .btn-primary:hover {
+    background-color: #218838;
+  }
